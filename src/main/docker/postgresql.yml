@@ -1,0 +1,11 @@
+version: '2'
+services:
+    nisrine_gateway-postgresql:
+        image: postgres:10.4
+        # volumes:
+        #     - ~/volumes/jhipster/nisrine_gateway/postgresql/:/var/lib/postgresql/data/
+        environment:
+            - POSTGRES_USER=nisrine_gateway
+            - POSTGRES_PASSWORD=
+        ports:
+            - 5432:5432

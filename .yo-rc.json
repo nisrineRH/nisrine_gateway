@@ -1,0 +1,38 @@
+{
+    "generator-jhipster": {
+        "promptValues": {
+            "packageName": "com.gateway.open",
+            "nativeLanguage": "fr"
+        },
+        "jhipsterVersion": "5.8.2",
+        "applicationType": "gateway",
+        "baseName": "nisrine_gateway",
+        "packageName": "com.gateway.open",
+        "packageFolder": "com/gateway/open",
+        "serverPort": "8080",
+        "authenticationType": "jwt",
+        "cacheProvider": "hazelcast",
+        "enableHibernateCache": false,
+        "websocket": false,
+        "databaseType": "sql",
+        "devDatabaseType": "h2Disk",
+        "prodDatabaseType": "postgresql",
+        "searchEngine": false,
+        "messageBroker": false,
+        "serviceDiscoveryType": "eureka",
+        "buildTool": "maven",
+        "enableSwaggerCodegen": false,
+        "jwtSecretKey": "NmNmNTAzMmU3ZjQ0Y2NhYjY1YTQ3NzIzNTk2YTVlOWM1MjIxMjE3YzQ0MjhjNTA4YjQwMDM1MDVkMmE5NmRkNjJhOTczZTJkZGQxNDIyOWUxOWNjNzEwYjAwOWJhNjgyYTViMWNiMTdhN2VlYWVjZGE0NTEwYzc0NDAxYjViZjc=",
+        "clientFramework": "angularX",
+        "useSass": true,
+        "clientPackageManager": "npm",
+        "testFrameworks": [],
+        "jhiPrefix": "jhi",
+        "entitySuffix": "",
+        "dtoSuffix": "DTO",
+        "otherModules": [],
+        "enableTranslation": true,
+        "nativeLanguage": "fr",
+        "languages": ["fr"]
+    }
+}
