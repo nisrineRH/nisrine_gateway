@@ -1,0 +1,39 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="histouriqueStatutDemande">
+            <h2><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceHistouriqueStatutDemande.detail.title">Histourique Statut Demande</span> {{histouriqueStatutDemande.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceHistouriqueStatutDemande.userModification">User Modification</span></dt>
+                <dd>
+                    <span>{{histouriqueStatutDemande.userModification}}</span>
+                </dd>
+                <dt><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceHistouriqueStatutDemande.msgMail">Msg Mail</span></dt>
+                <dd>
+                    <span>{{histouriqueStatutDemande.msgMail}}</span>
+                </dd>
+                <dt><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceHistouriqueStatutDemande.desinataireDuMail">Desinataire Du Mail</span></dt>
+                <dd>
+                    <span>{{histouriqueStatutDemande.desinataireDuMail}}</span>
+                </dd>
+                <dt><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceHistouriqueStatutDemande.dm_statut">Dm Statut</span></dt>
+                <dd>
+                    <span>{{histouriqueStatutDemande.dm_statut}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/histourique-statut-demande', histouriqueStatutDemande.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,37 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="demande_document">
+            <h2><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemandeDocument.detail.title">Demande Document</span> {{demande_document.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemandeDocument.dm_doc_libelle">Dm Doc Libelle</span></dt>
+                <dd>
+                    <span>{{demande_document.dm_doc_libelle}}</span>
+                </dd>
+                <dt><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemandeDocument.dm_doc_type">Dm Doc Type</span></dt>
+                <dd>
+                    <span>{{demande_document.dm_doc_type}}</span>
+                </dd>
+                <dt><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemandeDocument.demande">Demande</span></dt>
+                <dd>
+                    <div *ngIf="demande_document.demandeId">
+                        <a [routerLink]="['/demande', demande_document.demandeId, 'view']">{{demande_document.demandeId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/demande-document', demande_document.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

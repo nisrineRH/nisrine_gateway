@@ -1,0 +1,71 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="demande">
+            <h2><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.detail.title">Demande</span> {{demande.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.dm_numero">Dm Numero</span></dt>
+                <dd>
+                    <span>{{demande.dm_numero}}</span>
+                </dd>
+                <dt><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.dm_libelle">Dm Libelle</span></dt>
+                <dd>
+                    <span>{{demande.dm_libelle}}</span>
+                </dd>
+                <dt><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.dm_statu">Dm Statu</span></dt>
+                <dd>
+                    <span>{{demande.dm_statu}}</span>
+                </dd>
+                <dt><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.dm_type">Dm Type</span></dt>
+                <dd>
+                    <span>{{demande.dm_type}}</span>
+                </dd>
+                <dt><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.dm_priorite">Dm Priorite</span></dt>
+                <dd>
+                    <span>{{demande.dm_priorite}}</span>
+                </dd>
+                <dt><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.intervenant">Intervenant</span></dt>
+                <dd>
+                    <span>{{demande.intervenant}}</span>
+                </dd>
+                <dt><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.description">Description</span></dt>
+                <dd>
+                    <span>{{demande.description}}</span>
+                </dd>
+                <dt><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.visibleSurInternet">Visible Sur Internet</span></dt>
+                <dd>
+                    <span>{{demande.visibleSurInternet}}</span>
+                </dd>
+                <dt><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.dateLivraisonSouhaitee">Date Livraison Souhaitee</span></dt>
+                <dd>
+                    <span>{{demande.dateLivraisonSouhaitee}}</span>
+                </dd>
+                <dt><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.client">Client</span></dt>
+                <dd>
+                    <div *ngIf="demande.clientId">
+                        <a [routerLink]="['/client', demande.clientId, 'view']">{{demande.clientId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.histouriqueStatutDemande">Histourique Statut Demande</span></dt>
+                <dd>
+                    <div *ngIf="demande.histouriqueStatutDemandeId">
+                        <a [routerLink]="['/histourique-statut-demande', demande.histouriqueStatutDemandeId, 'view']">{{demande.histouriqueStatutDemandeId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/demande', demande.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

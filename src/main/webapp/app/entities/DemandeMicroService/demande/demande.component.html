@@ -1,0 +1,90 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.home.title">Demandes</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-demande" [routerLink]="['/demande/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.home.createLabel">
+            Create new Demande
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="demandes">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="dm_numero"><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.dm_numero">Dm Numero</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="dm_libelle"><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.dm_libelle">Dm Libelle</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="dm_statu"><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.dm_statu">Dm Statu</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="dm_type"><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.dm_type">Dm Type</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="dm_priorite"><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.dm_priorite">Dm Priorite</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="intervenant"><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.intervenant">Intervenant</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="description"><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.description">Description</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="visibleSurInternet"><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.visibleSurInternet">Visible Sur Internet</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="dateLivraisonSouhaitee"><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.dateLivraisonSouhaitee">Date Livraison Souhaitee</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="clientId"><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.client">Client</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="histouriqueStatutDemandeId"><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.histouriqueStatutDemande">Histourique Statut Demande</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let demande of demandes ;trackBy: trackId">
+                <td><a [routerLink]="['/demande', demande.id, 'view' ]">{{demande.id}}</a></td>
+                <td>{{demande.dm_numero}}</td>
+                <td>{{demande.dm_libelle}}</td>
+                <td>{{demande.dm_statu}}</td>
+                <td>{{demande.dm_type}}</td>
+                <td>{{demande.dm_priorite}}</td>
+                <td>{{demande.intervenant}}</td>
+                <td>{{demande.description}}</td>
+                <td>{{demande.visibleSurInternet}}</td>
+                <td>{{demande.dateLivraisonSouhaitee | date:'mediumDate'}}</td>
+                <td>
+                    <div *ngIf="demande.clientId">
+                        <a [routerLink]="['../client', demande.clientId , 'view' ]" >{{demande.clientId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="demande.histouriqueStatutDemandeId">
+                        <a [routerLink]="['../histourique-statut-demande', demande.histouriqueStatutDemandeId , 'view' ]" >{{demande.histouriqueStatutDemandeId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/demande', demande.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/demande', demande.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'demande', { outlets: { popup: demande.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="demandes && demandes.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

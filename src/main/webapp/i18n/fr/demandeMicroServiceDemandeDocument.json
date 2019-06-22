@@ -1,0 +1,27 @@
+{
+    "nisrineGatewayApp": {
+        "demandeMicroServiceDemandeDocument": {
+            "home": {
+                "title": "Demande_documents",
+                "createLabel": "Créer un nouveau Demande Document",
+                "createOrEditLabel": "Créer ou éditer un Demande Document"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Demande Document {{ id }} ?"
+            },
+            "detail": {
+                "title": "Demande Document"
+            },
+            "dm_doc_libelle": "Dm Doc Libelle",
+            "dm_doc_type": "Dm Doc Type",
+            "demande": "Demande"
+        }
+    },
+    "demandeMicroServiceApp": {
+        "demandeMicroServiceDemandeDocument": {
+            "created": "Un nouveau Demande Document a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Demande Document avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Demande Document avec l'identifiant {{ param }} a été supprimé"
+        }
+    }
+}

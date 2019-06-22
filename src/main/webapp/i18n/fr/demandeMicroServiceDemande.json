@@ -1,0 +1,36 @@
+{
+    "nisrineGatewayApp": {
+        "demandeMicroServiceDemande": {
+            "home": {
+                "title": "Demandes",
+                "createLabel": "Créer un nouveau Demande",
+                "createOrEditLabel": "Créer ou éditer un Demande"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Demande {{ id }} ?"
+            },
+            "detail": {
+                "title": "Demande"
+            },
+            "dm_numero": "Dm Numero",
+            "dm_libelle": "Dm Libelle",
+            "dm_statu": "Dm Statu",
+            "dm_type": "Dm Type",
+            "dm_priorite": "Dm Priorite",
+            "intervenant": "Intervenant",
+            "description": "Description",
+            "visibleSurInternet": "Visible Sur Internet",
+            "dateLivraisonSouhaitee": "Date Livraison Souhaitee",
+            "client": "Client",
+            "histouriqueStatutDemande": "Histourique Statut Demande",
+            "demande_document": "Demande Document"
+        }
+    },
+    "demandeMicroServiceApp": {
+        "demandeMicroServiceDemande": {
+            "created": "Un nouveau Demande a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Demande avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Demande avec l'identifiant {{ param }} a été supprimé"
+        }
+    }
+}

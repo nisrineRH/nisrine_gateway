@@ -1,0 +1,49 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-histourique-statut-demande-heading" jhiTranslate="nisrineGatewayApp.demandeMicroServiceHistouriqueStatutDemande.home.createOrEditLabel">Create or edit a Histourique Statut Demande</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!histouriqueStatutDemande.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="histouriqueStatutDemande.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="nisrineGatewayApp.demandeMicroServiceHistouriqueStatutDemande.userModification" for="field_userModification">User Modification</label>
+                    <div class="input-group">
+                        <input id="field_userModification" type="text" class="form-control" name="userModification" ngbDatepicker  #userModificationDp="ngbDatepicker" [(ngModel)]="histouriqueStatutDemande.userModification"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="userModificationDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="nisrineGatewayApp.demandeMicroServiceHistouriqueStatutDemande.msgMail" for="field_msgMail">Msg Mail</label>
+                    <input type="text" class="form-control" name="msgMail" id="field_msgMail"
+                        [(ngModel)]="histouriqueStatutDemande.msgMail" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="nisrineGatewayApp.demandeMicroServiceHistouriqueStatutDemande.desinataireDuMail" for="field_desinataireDuMail">Desinataire Du Mail</label>
+                    <input type="text" class="form-control" name="desinataireDuMail" id="field_desinataireDuMail"
+                        [(ngModel)]="histouriqueStatutDemande.desinataireDuMail" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="nisrineGatewayApp.demandeMicroServiceHistouriqueStatutDemande.dm_statut" for="field_dm_statut">Dm Statut</label>
+                    <input type="text" class="form-control" name="dm_statut" id="field_dm_statut"
+                        [(ngModel)]="histouriqueStatutDemande.dm_statut" />
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

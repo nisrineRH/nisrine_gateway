@@ -1,0 +1,29 @@
+{
+    "nisrineGatewayApp": {
+        "demandeMicroServiceHistouriqueStatutDemande": {
+            "home": {
+                "title": "HistouriqueStatutDemandes",
+                "createLabel": "Créer un nouveau Histourique Statut Demande",
+                "createOrEditLabel": "Créer ou éditer un Histourique Statut Demande"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Histourique Statut Demande {{ id }} ?"
+            },
+            "detail": {
+                "title": "Histourique Statut Demande"
+            },
+            "userModification": "User Modification",
+            "msgMail": "Msg Mail",
+            "desinataireDuMail": "Desinataire Du Mail",
+            "dm_statut": "Dm Statut",
+            "demande": "Demande"
+        }
+    },
+    "demandeMicroServiceApp": {
+        "demandeMicroServiceHistouriqueStatutDemande": {
+            "created": "Un nouveau Histourique Statut Demande a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Histourique Statut Demande avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Histourique Statut Demande avec l'identifiant {{ param }} a été supprimé"
+        }
+    }
+}

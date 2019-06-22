@@ -1,0 +1,88 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-demande-heading" jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.home.createOrEditLabel">Create or edit a Demande</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!demande.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="demande.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.dm_numero" for="field_dm_numero">Dm Numero</label>
+                    <input type="number" class="form-control" name="dm_numero" id="field_dm_numero"
+                        [(ngModel)]="demande.dm_numero" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.dm_libelle" for="field_dm_libelle">Dm Libelle</label>
+                    <input type="text" class="form-control" name="dm_libelle" id="field_dm_libelle"
+                        [(ngModel)]="demande.dm_libelle" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.dm_statu" for="field_dm_statu">Dm Statu</label>
+                    <input type="text" class="form-control" name="dm_statu" id="field_dm_statu"
+                        [(ngModel)]="demande.dm_statu" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.dm_type" for="field_dm_type">Dm Type</label>
+                    <input type="text" class="form-control" name="dm_type" id="field_dm_type"
+                        [(ngModel)]="demande.dm_type" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.dm_priorite" for="field_dm_priorite">Dm Priorite</label>
+                    <input type="text" class="form-control" name="dm_priorite" id="field_dm_priorite"
+                        [(ngModel)]="demande.dm_priorite" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.intervenant" for="field_intervenant">Intervenant</label>
+                    <input type="number" class="form-control" name="intervenant" id="field_intervenant"
+                        [(ngModel)]="demande.intervenant" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.description" for="field_description">Description</label>
+                    <input type="text" class="form-control" name="description" id="field_description"
+                        [(ngModel)]="demande.description" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.visibleSurInternet" for="field_visibleSurInternet">Visible Sur Internet</label>
+                    <input type="checkbox" class="form-control" name="visibleSurInternet" id="field_visibleSurInternet"
+                        [(ngModel)]="demande.visibleSurInternet" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.dateLivraisonSouhaitee" for="field_dateLivraisonSouhaitee">Date Livraison Souhaitee</label>
+                    <div class="input-group">
+                        <input id="field_dateLivraisonSouhaitee" type="text" class="form-control" name="dateLivraisonSouhaitee" ngbDatepicker  #dateLivraisonSouhaiteeDp="ngbDatepicker" [(ngModel)]="demande.dateLivraisonSouhaitee"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateLivraisonSouhaiteeDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.client" for="field_client">Client</label>
+                    <select class="form-control" id="field_client" name="client" [(ngModel)]="demande.clientId" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="clientOption.id" *ngFor="let clientOption of clients; trackBy: trackClientById">{{clientOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.histouriqueStatutDemande" for="field_histouriqueStatutDemande">Histourique Statut Demande</label>
+                    <select class="form-control" id="field_histouriqueStatutDemande" name="histouriqueStatutDemande" [(ngModel)]="demande.histouriqueStatutDemandeId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="histouriqueStatutDemandeOption.id" *ngFor="let histouriqueStatutDemandeOption of histouriquestatutdemandes; trackBy: trackHistouriqueStatutDemandeById">{{histouriqueStatutDemandeOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
