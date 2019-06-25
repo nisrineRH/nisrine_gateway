@@ -1,0 +1,58 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-client-document-heading" jhiTranslate="nisrineGatewayApp.demandeMicroServiceClientDocument.home.createOrEditLabel">Create or edit a Client Document</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!client_document.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="client_document.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="nisrineGatewayApp.demandeMicroServiceClientDocument.doc_chemin" for="field_doc_chemin">Doc Chemin</label>
+                    <input type="text" class="form-control" name="doc_chemin" id="field_doc_chemin"
+                        [(ngModel)]="client_document.doc_chemin" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="nisrineGatewayApp.demandeMicroServiceClientDocument.doc_libelle" for="field_doc_libelle">Doc Libelle</label>
+                    <input type="text" class="form-control" name="doc_libelle" id="field_doc_libelle"
+                        [(ngModel)]="client_document.doc_libelle" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="nisrineGatewayApp.demandeMicroServiceClientDocument.doc_date" for="field_doc_date">Doc Date</label>
+                    <div class="input-group">
+                        <input id="field_doc_date" type="text" class="form-control" name="doc_date" ngbDatepicker  #doc_dateDp="ngbDatepicker" [(ngModel)]="client_document.doc_date"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="doc_dateDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="nisrineGatewayApp.demandeMicroServiceClientDocument.client" for="field_client">Client</label>
+                    <select class="form-control" id="field_client" name="client" [(ngModel)]="client_document.clientId" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="clientOption.id" *ngFor="let clientOption of clients; trackBy: trackClientById">{{clientOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="nisrineGatewayApp.demandeMicroServiceClientDocument.category_document" for="field_category_document">Category Document</label>
+                    <select class="form-control" id="field_category_document" name="category_document" [(ngModel)]="client_document.category_documentId" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="category_documentOption.id" *ngFor="let category_documentOption of category_documents; trackBy: trackCategory_documentById">{{category_documentOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

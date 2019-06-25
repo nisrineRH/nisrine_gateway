@@ -1,0 +1,29 @@
+{
+    "nisrineGatewayApp": {
+        "demandeMicroServiceClientDocument": {
+            "home": {
+                "title": "Client_documents",
+                "createLabel": "Créer un nouveau Client Document",
+                "createOrEditLabel": "Créer ou éditer un Client Document"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Client Document {{ id }} ?"
+            },
+            "detail": {
+                "title": "Client Document"
+            },
+            "doc_chemin": "Doc Chemin",
+            "doc_libelle": "Doc Libelle",
+            "doc_date": "Doc Date",
+            "client": "Client",
+            "category_document": "Category Document"
+        }
+    },
+    "demandeMicroServiceApp": {
+        "demandeMicroServiceClientDocument": {
+            "created": "Un nouveau Client Document a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Client Document avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Client Document avec l'identifiant {{ param }} a été supprimé"
+        }
+    }
+}

@@ -11,6 +11,8 @@
                 "demandeMicroServiceDemande": "Demande",
                 "demandeMicroServiceHistouriqueStatutDemande": "Histourique Statut Demande",
                 "demandeMicroServiceDemandeDocument": "Demande Document",
+                "demandeMicroServiceCategoryDocument": "Category Document",
+                "demandeMicroServiceClientDocument": "Client Document",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

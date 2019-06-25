@@ -1,0 +1,47 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="client_document">
+            <h2><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceClientDocument.detail.title">Client Document</span> {{client_document.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceClientDocument.doc_chemin">Doc Chemin</span></dt>
+                <dd>
+                    <span>{{client_document.doc_chemin}}</span>
+                </dd>
+                <dt><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceClientDocument.doc_libelle">Doc Libelle</span></dt>
+                <dd>
+                    <span>{{client_document.doc_libelle}}</span>
+                </dd>
+                <dt><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceClientDocument.doc_date">Doc Date</span></dt>
+                <dd>
+                    <span>{{client_document.doc_date}}</span>
+                </dd>
+                <dt><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceClientDocument.client">Client</span></dt>
+                <dd>
+                    <div *ngIf="client_document.clientId">
+                        <a [routerLink]="['/client', client_document.clientId, 'view']">{{client_document.clientId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceClientDocument.category_document">Category Document</span></dt>
+                <dd>
+                    <div *ngIf="client_document.category_documentId">
+                        <a [routerLink]="['/category-document', client_document.category_documentId, 'view']">{{client_document.category_documentId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/client-document', client_document.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

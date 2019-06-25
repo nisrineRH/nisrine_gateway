@@ -1,0 +1,31 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="category_document">
+            <h2><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceCategoryDocument.detail.title">Category Document</span> {{category_document.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceCategoryDocument.cat_numero">Cat Numero</span></dt>
+                <dd>
+                    <span>{{category_document.cat_numero}}</span>
+                </dd>
+                <dt><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceCategoryDocument.cat_nom">Cat Nom</span></dt>
+                <dd>
+                    <span>{{category_document.cat_nom}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/category-document', category_document.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

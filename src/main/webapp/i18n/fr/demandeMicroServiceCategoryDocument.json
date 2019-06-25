@@ -1,0 +1,27 @@
+{
+    "nisrineGatewayApp": {
+        "demandeMicroServiceCategoryDocument": {
+            "home": {
+                "title": "Category_documents",
+                "createLabel": "Créer un nouveau Category Document",
+                "createOrEditLabel": "Créer ou éditer un Category Document"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Category Document {{ id }} ?"
+            },
+            "detail": {
+                "title": "Category Document"
+            },
+            "cat_numero": "Cat Numero",
+            "cat_nom": "Cat Nom",
+            "client_document": "Client Document"
+        }
+    },
+    "demandeMicroServiceApp": {
+        "demandeMicroServiceCategoryDocument": {
+            "created": "Un nouveau Category Document a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Category Document avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Category Document avec l'identifiant {{ param }} a été supprimé"
+        }
+    }
+}

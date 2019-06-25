@@ -1,0 +1,34 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-category-document-heading" jhiTranslate="nisrineGatewayApp.demandeMicroServiceCategoryDocument.home.createOrEditLabel">Create or edit a Category Document</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!category_document.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="category_document.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="nisrineGatewayApp.demandeMicroServiceCategoryDocument.cat_numero" for="field_cat_numero">Cat Numero</label>
+                    <input type="number" class="form-control" name="cat_numero" id="field_cat_numero"
+                        [(ngModel)]="category_document.cat_numero" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="nisrineGatewayApp.demandeMicroServiceCategoryDocument.cat_nom" for="field_cat_nom">Cat Nom</label>
+                    <input type="text" class="form-control" name="cat_nom" id="field_cat_nom"
+                        [(ngModel)]="category_document.cat_nom" />
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
