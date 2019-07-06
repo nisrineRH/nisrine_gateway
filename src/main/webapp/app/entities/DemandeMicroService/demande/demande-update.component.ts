@@ -24,6 +24,7 @@ export class DemandeUpdateComponent implements OnInit {
 
     histouriquestatutdemandes: IHistouriqueStatutDemande[];
     dateLivraisonSouhaiteeDp: any;
+    dateAccordDevisDp: any;
 
     constructor(
         protected jhiAlertService: JhiAlertService,

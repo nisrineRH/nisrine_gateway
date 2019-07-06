@@ -24,6 +24,7 @@
             <th jhiSortBy="description"><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.description">Description</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="visibleSurInternet"><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.visibleSurInternet">Visible Sur Internet</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="dateLivraisonSouhaitee"><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.dateLivraisonSouhaitee">Date Livraison Souhaitee</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="dateAccordDevis"><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.dateAccordDevis">Date Accord Devis</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="clientId"><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.client">Client</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="histouriqueStatutDemandeId"><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.histouriqueStatutDemande">Histourique Statut Demande</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th></th>
@@ -41,6 +42,7 @@
                 <td>{{demande.description}}</td>
                 <td>{{demande.visibleSurInternet}}</td>
                 <td>{{demande.dateLivraisonSouhaitee | date:'mediumDate'}}</td>
+                <td>{{demande.dateAccordDevis | date:'mediumDate'}}</td>
                 <td>
                     <div *ngIf="demande.clientId">
                         <a [routerLink]="['../client', demande.clientId , 'view' ]" >{{demande.clientId}}</a>

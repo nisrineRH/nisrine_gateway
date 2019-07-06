@@ -54,7 +54,9 @@ export class DemandeService {
             dateLivraisonSouhaitee:
                 demande.dateLivraisonSouhaitee != null && demande.dateLivraisonSouhaitee.isValid()
                     ? demande.dateLivraisonSouhaitee.format(DATE_FORMAT)
-                    : null
+                    : null,
+            dateAccordDevis:
+                demande.dateAccordDevis != null && demande.dateAccordDevis.isValid() ? demande.dateAccordDevis.format(DATE_FORMAT) : null
         });
         return copy;
     }
@@ -62,6 +64,7 @@ export class DemandeService {
     protected convertDateFromServer(res: EntityResponseType): EntityResponseType {
         if (res.body) {
             res.body.dateLivraisonSouhaitee = res.body.dateLivraisonSouhaitee != null ? moment(res.body.dateLivraisonSouhaitee) : null;
+            res.body.dateAccordDevis = res.body.dateAccordDevis != null ? moment(res.body.dateAccordDevis) : null;
         }
         return res;
     }
@@ -70,6 +73,7 @@ export class DemandeService {
         if (res.body) {
             res.body.forEach((demande: IDemande) => {
                 demande.dateLivraisonSouhaitee = demande.dateLivraisonSouhaitee != null ? moment(demande.dateLivraisonSouhaitee) : null;
+                demande.dateAccordDevis = demande.dateAccordDevis != null ? moment(demande.dateAccordDevis) : null;
             });
         }
         return res;

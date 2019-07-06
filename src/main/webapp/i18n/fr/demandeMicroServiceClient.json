@@ -14,6 +14,7 @@
             },
             "client_nom": "Client Nom",
             "client_numero": "Client Numero",
+            "faitSaMiseEnProduction": "Fait Sa Mise En Production",
             "demande": "Demande",
             "client_document": "Client Document"
         }

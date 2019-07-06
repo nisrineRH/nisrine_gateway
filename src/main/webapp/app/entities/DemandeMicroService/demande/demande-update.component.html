@@ -36,7 +36,7 @@
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.intervenant" for="field_intervenant">Intervenant</label>
-                    <input type="number" class="form-control" name="intervenant" id="field_intervenant"
+                    <input type="text" class="form-control" name="intervenant" id="field_intervenant"
                         [(ngModel)]="demande.intervenant" />
                 </div>
                 <div class="form-group">
@@ -56,6 +56,16 @@
                         />
                         <span class="input-group-append">
                             <button type="button" class="btn btn-secondary" (click)="dateLivraisonSouhaiteeDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.dateAccordDevis" for="field_dateAccordDevis">Date Accord Devis</label>
+                    <div class="input-group">
+                        <input id="field_dateAccordDevis" type="text" class="form-control" name="dateAccordDevis" ngbDatepicker  #dateAccordDevisDp="ngbDatepicker" [(ngModel)]="demande.dateAccordDevis"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateAccordDevisDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
                         </span>
                     </div>
                 </div>

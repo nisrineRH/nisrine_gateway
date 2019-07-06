@@ -8,10 +8,11 @@ export interface IDemande {
     dm_statu?: string;
     dm_type?: string;
     dm_priorite?: string;
-    intervenant?: number;
+    intervenant?: string;
     description?: string;
     visibleSurInternet?: boolean;
     dateLivraisonSouhaitee?: Moment;
+    dateAccordDevis?: Moment;
     clientId?: number;
     histouriqueStatutDemandeId?: number;
     demande_documents?: IDemande_document[];
@@ -25,10 +26,11 @@ export class Demande implements IDemande {
         public dm_statu?: string,
         public dm_type?: string,
         public dm_priorite?: string,
-        public intervenant?: number,
+        public intervenant?: string,
         public description?: string,
         public visibleSurInternet?: boolean,
         public dateLivraisonSouhaitee?: Moment,
+        public dateAccordDevis?: Moment,
         public clientId?: number,
         public histouriqueStatutDemandeId?: number,
         public demande_documents?: IDemande_document[]

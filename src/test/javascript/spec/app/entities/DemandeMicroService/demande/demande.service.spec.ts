@@ -25,14 +25,27 @@ describe('Service Tests', () => {
             httpMock = injector.get(HttpTestingController);
             currentDate = moment();
 
-            elemDefault = new Demande(0, 0, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', 0, 'AAAAAAA', false, currentDate);
+            elemDefault = new Demande(
+                0,
+                0,
+                'AAAAAAA',
+                'AAAAAAA',
+                'AAAAAAA',
+                'AAAAAAA',
+                'AAAAAAA',
+                'AAAAAAA',
+                false,
+                currentDate,
+                currentDate
+            );
         });
 
         describe('Service methods', async () => {
             it('should find an element', async () => {
                 const returnedFromService = Object.assign(
                     {
-                        dateLivraisonSouhaitee: currentDate.format(DATE_FORMAT)
+                        dateLivraisonSouhaitee: currentDate.format(DATE_FORMAT),
+                        dateAccordDevis: currentDate.format(DATE_FORMAT)
                     },
                     elemDefault
                 );
@@ -49,13 +62,15 @@ describe('Service Tests', () => {
                 const returnedFromService = Object.assign(
                     {
                         id: 0,
-                        dateLivraisonSouhaitee: currentDate.format(DATE_FORMAT)
+                        dateLivraisonSouhaitee: currentDate.format(DATE_FORMAT),
+                        dateAccordDevis: currentDate.format(DATE_FORMAT)
                     },
                     elemDefault
                 );
                 const expected = Object.assign(
                     {
-                        dateLivraisonSouhaitee: currentDate
+                        dateLivraisonSouhaitee: currentDate,
+                        dateAccordDevis: currentDate
                     },
                     returnedFromService
                 );
@@ -75,17 +90,19 @@ describe('Service Tests', () => {
                         dm_statu: 'BBBBBB',
                         dm_type: 'BBBBBB',
                         dm_priorite: 'BBBBBB',
-                        intervenant: 1,
+                        intervenant: 'BBBBBB',
                         description: 'BBBBBB',
                         visibleSurInternet: true,
-                        dateLivraisonSouhaitee: currentDate.format(DATE_FORMAT)
+                        dateLivraisonSouhaitee: currentDate.format(DATE_FORMAT),
+                        dateAccordDevis: currentDate.format(DATE_FORMAT)
                     },
                     elemDefault
                 );
 
                 const expected = Object.assign(
                     {
-                        dateLivraisonSouhaitee: currentDate
+                        dateLivraisonSouhaitee: currentDate,
+                        dateAccordDevis: currentDate
                     },
                     returnedFromService
                 );
@@ -105,16 +122,18 @@ describe('Service Tests', () => {
                         dm_statu: 'BBBBBB',
                         dm_type: 'BBBBBB',
                         dm_priorite: 'BBBBBB',
-                        intervenant: 1,
+                        intervenant: 'BBBBBB',
                         description: 'BBBBBB',
                         visibleSurInternet: true,
-                        dateLivraisonSouhaitee: currentDate.format(DATE_FORMAT)
+                        dateLivraisonSouhaitee: currentDate.format(DATE_FORMAT),
+                        dateAccordDevis: currentDate.format(DATE_FORMAT)
                     },
                     elemDefault
                 );
                 const expected = Object.assign(
                     {
-                        dateLivraisonSouhaitee: currentDate
+                        dateLivraisonSouhaitee: currentDate,
+                        dateAccordDevis: currentDate
                     },
                     returnedFromService
                 );

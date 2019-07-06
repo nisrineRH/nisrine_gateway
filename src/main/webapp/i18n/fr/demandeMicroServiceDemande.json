@@ -21,6 +21,7 @@
             "description": "Description",
             "visibleSurInternet": "Visible Sur Internet",
             "dateLivraisonSouhaitee": "Date Livraison Souhaitee",
+            "dateAccordDevis": "Date Accord Devis",
             "client": "Client",
             "histouriqueStatutDemande": "Histourique Statut Demande",
             "demande_document": "Demande Document"

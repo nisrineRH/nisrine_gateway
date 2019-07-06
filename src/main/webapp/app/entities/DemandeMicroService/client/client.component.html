@@ -17,6 +17,7 @@
             <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="client_nom"><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceClient.client_nom">Client Nom</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="client_numero"><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceClient.client_numero">Client Numero</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="faitSaMiseEnProduction"><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceClient.faitSaMiseEnProduction">Fait Sa Mise En Production</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th></th>
             </tr>
             </thead>
@@ -25,6 +26,7 @@
                 <td><a [routerLink]="['/client', client.id, 'view' ]">{{client.id}}</a></td>
                 <td>{{client.client_nom}}</td>
                 <td>{{client.client_numero}}</td>
+                <td>{{client.faitSaMiseEnProduction}}</td>
                 <td class="text-right">
                     <div class="btn-group flex-btn-group-container">
                         <button type="submit"
