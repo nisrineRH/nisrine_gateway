@@ -20,9 +20,9 @@
                         [(ngModel)]="demande.dm_libelle" />
                 </div>
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.dm_statu" for="field_dm_statu">Dm Statu</label>
-                    <input type="text" class="form-control" name="dm_statu" id="field_dm_statu"
-                        [(ngModel)]="demande.dm_statu" />
+                    <label class="form-control-label" jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.dm_statut" for="field_dm_statut">Dm Statut</label>
+                    <input type="text" class="form-control" name="dm_statut" id="field_dm_statut"
+                        [(ngModel)]="demande.dm_statut" />
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.dm_type" for="field_dm_type">Dm Type</label>
@@ -66,6 +66,46 @@
                         />
                         <span class="input-group-append">
                             <button type="button" class="btn btn-secondary" (click)="dateAccordDevisDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.dateLivraisonPrevue" for="field_dateLivraisonPrevue">Date Livraison Prevue</label>
+                    <div class="input-group">
+                        <input id="field_dateLivraisonPrevue" type="text" class="form-control" name="dateLivraisonPrevue" ngbDatepicker  #dateLivraisonPrevueDp="ngbDatepicker" [(ngModel)]="demande.dateLivraisonPrevue"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateLivraisonPrevueDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.dateMiseEnRecette" for="field_dateMiseEnRecette">Date Mise En Recette</label>
+                    <div class="input-group">
+                        <input id="field_dateMiseEnRecette" type="text" class="form-control" name="dateMiseEnRecette" ngbDatepicker  #dateMiseEnRecetteDp="ngbDatepicker" [(ngModel)]="demande.dateMiseEnRecette"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateMiseEnRecetteDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.dateValidationRecette" for="field_dateValidationRecette">Date Validation Recette</label>
+                    <div class="input-group">
+                        <input id="field_dateValidationRecette" type="text" class="form-control" name="dateValidationRecette" ngbDatepicker  #dateValidationRecetteDp="ngbDatepicker" [(ngModel)]="demande.dateValidationRecette"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateValidationRecetteDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.dateMiseEnProduction" for="field_dateMiseEnProduction">Date Mise En Production</label>
+                    <div class="input-group">
+                        <input id="field_dateMiseEnProduction" type="text" class="form-control" name="dateMiseEnProduction" ngbDatepicker  #dateMiseEnProductionDp="ngbDatepicker" [(ngModel)]="demande.dateMiseEnProduction"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateMiseEnProductionDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
                         </span>
                     </div>
                 </div>

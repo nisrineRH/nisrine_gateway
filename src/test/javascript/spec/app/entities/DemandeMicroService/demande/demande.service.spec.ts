@@ -36,6 +36,10 @@ describe('Service Tests', () => {
                 'AAAAAAA',
                 false,
                 currentDate,
+                currentDate,
+                currentDate,
+                currentDate,
+                currentDate,
                 currentDate
             );
         });
@@ -45,7 +49,11 @@ describe('Service Tests', () => {
                 const returnedFromService = Object.assign(
                     {
                         dateLivraisonSouhaitee: currentDate.format(DATE_FORMAT),
-                        dateAccordDevis: currentDate.format(DATE_FORMAT)
+                        dateAccordDevis: currentDate.format(DATE_FORMAT),
+                        dateLivraisonPrevue: currentDate.format(DATE_FORMAT),
+                        dateMiseEnRecette: currentDate.format(DATE_FORMAT),
+                        dateValidationRecette: currentDate.format(DATE_FORMAT),
+                        dateMiseEnProduction: currentDate.format(DATE_FORMAT)
                     },
                     elemDefault
                 );
@@ -63,14 +71,22 @@ describe('Service Tests', () => {
                     {
                         id: 0,
                         dateLivraisonSouhaitee: currentDate.format(DATE_FORMAT),
-                        dateAccordDevis: currentDate.format(DATE_FORMAT)
+                        dateAccordDevis: currentDate.format(DATE_FORMAT),
+                        dateLivraisonPrevue: currentDate.format(DATE_FORMAT),
+                        dateMiseEnRecette: currentDate.format(DATE_FORMAT),
+                        dateValidationRecette: currentDate.format(DATE_FORMAT),
+                        dateMiseEnProduction: currentDate.format(DATE_FORMAT)
                     },
                     elemDefault
                 );
                 const expected = Object.assign(
                     {
                         dateLivraisonSouhaitee: currentDate,
-                        dateAccordDevis: currentDate
+                        dateAccordDevis: currentDate,
+                        dateLivraisonPrevue: currentDate,
+                        dateMiseEnRecette: currentDate,
+                        dateValidationRecette: currentDate,
+                        dateMiseEnProduction: currentDate
                     },
                     returnedFromService
                 );
@@ -87,14 +103,18 @@ describe('Service Tests', () => {
                     {
                         dm_numero: 1,
                         dm_libelle: 'BBBBBB',
-                        dm_statu: 'BBBBBB',
+                        dm_statut: 'BBBBBB',
                         dm_type: 'BBBBBB',
                         dm_priorite: 'BBBBBB',
                         intervenant: 'BBBBBB',
                         description: 'BBBBBB',
                         visibleSurInternet: true,
                         dateLivraisonSouhaitee: currentDate.format(DATE_FORMAT),
-                        dateAccordDevis: currentDate.format(DATE_FORMAT)
+                        dateAccordDevis: currentDate.format(DATE_FORMAT),
+                        dateLivraisonPrevue: currentDate.format(DATE_FORMAT),
+                        dateMiseEnRecette: currentDate.format(DATE_FORMAT),
+                        dateValidationRecette: currentDate.format(DATE_FORMAT),
+                        dateMiseEnProduction: currentDate.format(DATE_FORMAT)
                     },
                     elemDefault
                 );
@@ -102,7 +122,11 @@ describe('Service Tests', () => {
                 const expected = Object.assign(
                     {
                         dateLivraisonSouhaitee: currentDate,
-                        dateAccordDevis: currentDate
+                        dateAccordDevis: currentDate,
+                        dateLivraisonPrevue: currentDate,
+                        dateMiseEnRecette: currentDate,
+                        dateValidationRecette: currentDate,
+                        dateMiseEnProduction: currentDate
                     },
                     returnedFromService
                 );
@@ -119,21 +143,29 @@ describe('Service Tests', () => {
                     {
                         dm_numero: 1,
                         dm_libelle: 'BBBBBB',
-                        dm_statu: 'BBBBBB',
+                        dm_statut: 'BBBBBB',
                         dm_type: 'BBBBBB',
                         dm_priorite: 'BBBBBB',
                         intervenant: 'BBBBBB',
                         description: 'BBBBBB',
                         visibleSurInternet: true,
                         dateLivraisonSouhaitee: currentDate.format(DATE_FORMAT),
-                        dateAccordDevis: currentDate.format(DATE_FORMAT)
+                        dateAccordDevis: currentDate.format(DATE_FORMAT),
+                        dateLivraisonPrevue: currentDate.format(DATE_FORMAT),
+                        dateMiseEnRecette: currentDate.format(DATE_FORMAT),
+                        dateValidationRecette: currentDate.format(DATE_FORMAT),
+                        dateMiseEnProduction: currentDate.format(DATE_FORMAT)
                     },
                     elemDefault
                 );
                 const expected = Object.assign(
                     {
                         dateLivraisonSouhaitee: currentDate,
-                        dateAccordDevis: currentDate
+                        dateAccordDevis: currentDate,
+                        dateLivraisonPrevue: currentDate,
+                        dateMiseEnRecette: currentDate,
+                        dateValidationRecette: currentDate,
+                        dateMiseEnProduction: currentDate
                     },
                     returnedFromService
                 );

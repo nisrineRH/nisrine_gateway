@@ -56,7 +56,23 @@ export class DemandeService {
                     ? demande.dateLivraisonSouhaitee.format(DATE_FORMAT)
                     : null,
             dateAccordDevis:
-                demande.dateAccordDevis != null && demande.dateAccordDevis.isValid() ? demande.dateAccordDevis.format(DATE_FORMAT) : null
+                demande.dateAccordDevis != null && demande.dateAccordDevis.isValid() ? demande.dateAccordDevis.format(DATE_FORMAT) : null,
+            dateLivraisonPrevue:
+                demande.dateLivraisonPrevue != null && demande.dateLivraisonPrevue.isValid()
+                    ? demande.dateLivraisonPrevue.format(DATE_FORMAT)
+                    : null,
+            dateMiseEnRecette:
+                demande.dateMiseEnRecette != null && demande.dateMiseEnRecette.isValid()
+                    ? demande.dateMiseEnRecette.format(DATE_FORMAT)
+                    : null,
+            dateValidationRecette:
+                demande.dateValidationRecette != null && demande.dateValidationRecette.isValid()
+                    ? demande.dateValidationRecette.format(DATE_FORMAT)
+                    : null,
+            dateMiseEnProduction:
+                demande.dateMiseEnProduction != null && demande.dateMiseEnProduction.isValid()
+                    ? demande.dateMiseEnProduction.format(DATE_FORMAT)
+                    : null
         });
         return copy;
     }
@@ -65,6 +81,10 @@ export class DemandeService {
         if (res.body) {
             res.body.dateLivraisonSouhaitee = res.body.dateLivraisonSouhaitee != null ? moment(res.body.dateLivraisonSouhaitee) : null;
             res.body.dateAccordDevis = res.body.dateAccordDevis != null ? moment(res.body.dateAccordDevis) : null;
+            res.body.dateLivraisonPrevue = res.body.dateLivraisonPrevue != null ? moment(res.body.dateLivraisonPrevue) : null;
+            res.body.dateMiseEnRecette = res.body.dateMiseEnRecette != null ? moment(res.body.dateMiseEnRecette) : null;
+            res.body.dateValidationRecette = res.body.dateValidationRecette != null ? moment(res.body.dateValidationRecette) : null;
+            res.body.dateMiseEnProduction = res.body.dateMiseEnProduction != null ? moment(res.body.dateMiseEnProduction) : null;
         }
         return res;
     }
@@ -74,6 +94,10 @@ export class DemandeService {
             res.body.forEach((demande: IDemande) => {
                 demande.dateLivraisonSouhaitee = demande.dateLivraisonSouhaitee != null ? moment(demande.dateLivraisonSouhaitee) : null;
                 demande.dateAccordDevis = demande.dateAccordDevis != null ? moment(demande.dateAccordDevis) : null;
+                demande.dateLivraisonPrevue = demande.dateLivraisonPrevue != null ? moment(demande.dateLivraisonPrevue) : null;
+                demande.dateMiseEnRecette = demande.dateMiseEnRecette != null ? moment(demande.dateMiseEnRecette) : null;
+                demande.dateValidationRecette = demande.dateValidationRecette != null ? moment(demande.dateValidationRecette) : null;
+                demande.dateMiseEnProduction = demande.dateMiseEnProduction != null ? moment(demande.dateMiseEnProduction) : null;
             });
         }
         return res;

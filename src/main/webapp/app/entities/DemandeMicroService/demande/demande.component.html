@@ -17,7 +17,7 @@
             <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="dm_numero"><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.dm_numero">Dm Numero</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="dm_libelle"><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.dm_libelle">Dm Libelle</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="dm_statu"><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.dm_statu">Dm Statu</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="dm_statut"><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.dm_statut">Dm Statut</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="dm_type"><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.dm_type">Dm Type</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="dm_priorite"><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.dm_priorite">Dm Priorite</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="intervenant"><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.intervenant">Intervenant</span> <fa-icon [icon]="'sort'"></fa-icon></th>
@@ -25,6 +25,10 @@
             <th jhiSortBy="visibleSurInternet"><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.visibleSurInternet">Visible Sur Internet</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="dateLivraisonSouhaitee"><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.dateLivraisonSouhaitee">Date Livraison Souhaitee</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="dateAccordDevis"><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.dateAccordDevis">Date Accord Devis</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="dateLivraisonPrevue"><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.dateLivraisonPrevue">Date Livraison Prevue</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="dateMiseEnRecette"><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.dateMiseEnRecette">Date Mise En Recette</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="dateValidationRecette"><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.dateValidationRecette">Date Validation Recette</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="dateMiseEnProduction"><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.dateMiseEnProduction">Date Mise En Production</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="clientId"><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.client">Client</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="histouriqueStatutDemandeId"><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.histouriqueStatutDemande">Histourique Statut Demande</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th></th>
@@ -35,7 +39,7 @@
                 <td><a [routerLink]="['/demande', demande.id, 'view' ]">{{demande.id}}</a></td>
                 <td>{{demande.dm_numero}}</td>
                 <td>{{demande.dm_libelle}}</td>
-                <td>{{demande.dm_statu}}</td>
+                <td>{{demande.dm_statut}}</td>
                 <td>{{demande.dm_type}}</td>
                 <td>{{demande.dm_priorite}}</td>
                 <td>{{demande.intervenant}}</td>
@@ -43,6 +47,10 @@
                 <td>{{demande.visibleSurInternet}}</td>
                 <td>{{demande.dateLivraisonSouhaitee | date:'mediumDate'}}</td>
                 <td>{{demande.dateAccordDevis | date:'mediumDate'}}</td>
+                <td>{{demande.dateLivraisonPrevue | date:'mediumDate'}}</td>
+                <td>{{demande.dateMiseEnRecette | date:'mediumDate'}}</td>
+                <td>{{demande.dateValidationRecette | date:'mediumDate'}}</td>
+                <td>{{demande.dateMiseEnProduction | date:'mediumDate'}}</td>
                 <td>
                     <div *ngIf="demande.clientId">
                         <a [routerLink]="['../client', demande.clientId , 'view' ]" >{{demande.clientId}}</a>

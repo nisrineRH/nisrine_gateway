@@ -25,6 +25,10 @@ export class DemandeUpdateComponent implements OnInit {
     histouriquestatutdemandes: IHistouriqueStatutDemande[];
     dateLivraisonSouhaiteeDp: any;
     dateAccordDevisDp: any;
+    dateLivraisonPrevueDp: any;
+    dateMiseEnRecetteDp: any;
+    dateValidationRecetteDp: any;
+    dateMiseEnProductionDp: any;
 
     constructor(
         protected jhiAlertService: JhiAlertService,
