@@ -17,6 +17,7 @@
             <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="dm_doc_libelle"><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemandeDocument.dm_doc_libelle">Dm Doc Libelle</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="dm_doc_type"><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemandeDocument.dm_doc_type">Dm Doc Type</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="url"><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemandeDocument.url">Url</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th jhiSortBy="demandeId"><span jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemandeDocument.demande">Demande</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th></th>
             </tr>
@@ -26,6 +27,7 @@
                 <td><a [routerLink]="['/demande-document', demande_document.id, 'view' ]">{{demande_document.id}}</a></td>
                 <td>{{demande_document.dm_doc_libelle}}</td>
                 <td>{{demande_document.dm_doc_type}}</td>
+                <td>{{demande_document.url}}</td>
                 <td>
                     <div *ngIf="demande_document.demandeId">
                         <a [routerLink]="['../demande', demande_document.demandeId , 'view' ]" >{{demande_document.demandeId}}</a>

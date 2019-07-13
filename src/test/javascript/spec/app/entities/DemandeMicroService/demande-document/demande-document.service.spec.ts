@@ -21,7 +21,7 @@ describe('Service Tests', () => {
             service = injector.get(Demande_documentService);
             httpMock = injector.get(HttpTestingController);
 
-            elemDefault = new Demande_document(0, 'AAAAAAA', 'AAAAAAA');
+            elemDefault = new Demande_document(0, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA');
         });
 
         describe('Service methods', async () => {
@@ -56,7 +56,8 @@ describe('Service Tests', () => {
                 const returnedFromService = Object.assign(
                     {
                         dm_doc_libelle: 'BBBBBB',
-                        dm_doc_type: 'BBBBBB'
+                        dm_doc_type: 'BBBBBB',
+                        url: 'BBBBBB'
                     },
                     elemDefault
                 );
@@ -74,7 +75,8 @@ describe('Service Tests', () => {
                 const returnedFromService = Object.assign(
                     {
                         dm_doc_libelle: 'BBBBBB',
-                        dm_doc_type: 'BBBBBB'
+                        dm_doc_type: 'BBBBBB',
+                        url: 'BBBBBB'
                     },
                     elemDefault
                 );

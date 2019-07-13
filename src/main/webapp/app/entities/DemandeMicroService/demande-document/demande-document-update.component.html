@@ -19,6 +19,11 @@
                     <input type="text" class="form-control" name="dm_doc_type" id="field_dm_doc_type"
                         [(ngModel)]="demande_document.dm_doc_type" />
                 </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemandeDocument.url" for="field_url">Url</label>
+                    <input type="text" class="form-control" name="url" id="field_url"
+                        [(ngModel)]="demande_document.url" />
+                </div>
 
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemandeDocument.demande" for="field_demande">Demande</label>

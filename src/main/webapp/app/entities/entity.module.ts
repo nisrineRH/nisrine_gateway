@@ -64,6 +64,14 @@ import { RouterModule } from '@angular/router';
             {
                 path: 'demande',
                 loadChildren: './DemandeMicroService/demande/demande.module#DemandeMicroServiceDemandeModule'
+            },
+            {
+                path: 'demande-document',
+                loadChildren: './DemandeMicroService/demande-document/demande-document.module#DemandeMicroServiceDemande_documentModule'
+            },
+            {
+                path: 'demande-document',
+                loadChildren: './DemandeMicroService/demande-document/demande-document.module#DemandeMicroServiceDemande_documentModule'
             }
             /* jhipster-needle-add-entity-route - JHipster will add entity modules routes here */
         ])
