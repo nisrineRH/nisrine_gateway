@@ -13,7 +13,8 @@ import { DemandeService } from './demande.service';
 
 @Component({
     selector: 'jhi-demande',
-    templateUrl: './demande.component.html'
+    templateUrl: './demande.component.html',
+    styleUrls: ['./demande.css']
 })
 export class DemandeComponent implements OnInit, OnDestroy {
     currentAccount: any;

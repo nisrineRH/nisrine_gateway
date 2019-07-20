@@ -1,0 +1,285 @@
+/* ==========================================================================
+GLOBAL
+======================================================================== */
+html,
+body {
+    background-color: #f7f7f7;
+}
+.logo,
+.animated:after {
+    background: #ac1167;
+}
+h1 {
+    margin: 0;
+}
+h1 span {
+    display: inline-block;
+}
+h4 {
+    color: #ccc;
+}
+.bg-custom {
+    color: #fff;
+    background-color: #ac1167;
+}
+.btn-custom,
+.btn-outline-main-color {
+    color: #fff;
+    -webkit-appearance: inherit;
+    background-color: #ff9800;
+    border-color: #ff9800;
+}
+.text-customBlue {
+    color: #2196f3;
+}
+.text-customYell {
+    color: #ff9800;
+}
+.text-customGreen {
+    color: #00b4a8;
+}
+.text-custom {
+    color: #ac1368;
+}
+.customBlue .quote:after {
+    background-color: #2196f3;
+}
+.customYell .quote:after {
+    background-color: #ff9800;
+}
+.customGreen .quote:after {
+    background-color: #00b4a8;
+}
+.customColor .quote:after {
+    background-color: #ac1368;
+}
+/* ==========================================================================
+MENU CUSTOM
+======================================================================== */
+.customCollapse.active {
+    border-right: 4px solid #ac1167;
+}
+/* ==========================================================================
+SIGN-IN
+======================================================================== */
+.masque:before {
+    background-color: rgba(172, 17, 103, 0.9);
+}
+.user svg,
+.user span.bg-cover {
+    color: #ac1167;
+    background-color: #f0eeef;
+}
+.user a {
+    font-size: 0.9em;
+    display: block;
+    color: rgba(0, 0, 0, 0.4);
+}
+.user ul li:nth-child(2) a,
+.user ul li:nth-child(3) a {
+    padding-bottom: 0;
+}
+#main-search form svg {
+    color: #ac1167;
+}
+#main-search .form-control {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+/* ==========================================================================
+DASHBOARD
+======================================================================== */
+:not(.sidebar) .profilUser:not(.bg-cover) {
+    background: #fff;
+}
+.customerIcon {
+    color: #ff9800;
+    border: 1px solid #ff9800;
+}
+.requestIcon {
+    color: #28a745;
+    border: 1px solid #28a745;
+}
+.documentIcon {
+    color: #ac1267;
+    border: 1px solid #ac1267;
+}
+.statisticsIcon {
+    color: #2196f3;
+    border: 1px solid #2196f3;
+}
+.profilCustomer {
+    height: 70px;
+    width: 70px;
+}
+/* ==========================================================================
+DEMANDES
+======================================================================== */
+.demande .card h4 {
+    color: rgba(0, 0, 0, 0.8);
+}
+.demande .quote {
+    position: relative;
+}
+.demande .quote:after {
+    position: absolute;
+    top: 0;
+    content: '';
+    right: calc(100% + 1em);
+    height: 100%;
+    width: 4px;
+    border-radius: 4px;
+}
+.developpement-termine .quote:after {
+    background-color: #2196f3;
+}
+.developpement-termine .quote .d-flex {
+    color: #2196f3;
+}
+.recette-client-ok .quote:after {
+    background-color: #009688;
+}
+.recette-client-ok .quote .d-flex {
+    color: #009688;
+}
+.mise-en-production .quote:after {
+    background-color: #3caf4a;
+}
+.mise-en-production .quote .d-flex {
+    color: #3caf4a;
+}
+.detecte .quote:after {
+    background-color: #ff9800;
+}
+.detecte .quote .d-flex {
+    color: #ff9800;
+}
+.switch span {
+    color: rgba(0, 0, 0, 0.5);
+    margin-right: 10px;
+    position: relative;
+}
+.switch span:after {
+    position: absolute;
+    top: 100%;
+    content: '';
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 50%;
+    height: 5px;
+    width: 5px;
+    background-color: #fff;
+}
+.switchClient .switch span:nth-child(1),
+.switchOpen .switch span:nth-child(2) {
+    color: #ac1167;
+    font-weight: bold;
+}
+.switchClient .switch span:nth-child(1):after,
+.switchOpen .switch span:nth-child(2):after {
+    background-color: #ac1167;
+}
+.customCard button.btn-outline-custom {
+    color: #ac1167;
+    background-color: #fff;
+    border-color: #ac1167;
+}
+.customCard button.btn-outline-custom a {
+    color: #ac1167;
+}
+.customCard .quote svg {
+    height: 3em;
+}
+.megamenu-li {
+    position: static;
+}
+#main-search .scrollableTab {
+    height: 250px;
+}
+/* ==========================================================================
++ DEMANDE
+======================================================================== */
+#main-search .breadcrumb {
+    margin-bottom: 0;
+    background-color: transparent;
+}
+/* ==========================================================================
+STATISTIQUES
+======================================================================== */
+.card-bg-custom,
+.card-bg-custom h1,
+.card-bg-custom h2,
+.card-bg-custom {
+    background: #e9e9f3;
+}
+.card-bg-custom h1,
+.card-bg-custom h2 {
+    display: inline-block;
+}
+.card-bg-custom {
+    position: relative;
+    min-height: 526px;
+    overflow: hidden;
+}
+.card-bg-custom img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    opacity: 0;
+    transition: 0.8s ease;
+    transition-delay: 0.8s;
+    -webkit-transform: translateY(-40px);
+    transform: translateY(-40px);
+}
+.card-bg-custom > div {
+    position: relative;
+    z-index: 1;
+}
+.flexBetweenColumn .chartjs-wrapper {
+    height: 400px;
+    width: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* ==========================================================================
+RWD
+======================================================================== */
+@media only screen and (min-width: 992px) {
+    #main-search {
+        background: #f0eeef;
+    }
+    .listPresentation {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+    .megamenu {
+        top: calc(100% - 1em);
+        width: calc(100% - 2em);
+        max-width: 1200px;
+        left: auto;
+        right: 1em;
+        padding: 2em;
+    }
+    .user ul {
+        min-width: 250px;
+    }
+}
+@media only screen and (max-width: 991px) {
+    .list-grid-toggle {
+        display: none;
+    }
+    #main-search ul.nav {
+        background: #fff;
+    }
+    .megamenu {
+        padding: 1em;
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+}
