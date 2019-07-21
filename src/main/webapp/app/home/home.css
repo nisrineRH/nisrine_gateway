@@ -1,0 +1,23 @@
+:not(.sidebar) .profilUser:not(.bg-cover) {
+    background: #fff;
+}
+.customerIcon {
+    color: #ff9800;
+    border: 1px solid #ff9800;
+}
+.requestIcon {
+    color: #28a745;
+    border: 1px solid #28a745;
+}
+.documentIcon {
+    color: #ac1267;
+    border: 1px solid #ac1267;
+}
+.statisticsIcon {
+    color: #2196f3;
+    border: 1px solid #2196f3;
+}
+.profilCustomer {
+    height: 70px;
+    width: 70px;
+}
