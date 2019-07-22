@@ -1,0 +1,62 @@
+/* ==========================================================================
+GLOBAL
+======================================================================== */
+.logo {
+    background: #2196f3;
+}
+.btn-custom,
+.btn-outline-main-color {
+    color: #fff;
+    -webkit-appearance: inherit;
+    background-color: #ff9800;
+    border-color: #ff9800;
+}
+/* ==========================================================================
+SIGN-IN
+======================================================================== */
+.masque:before {
+    background-color: rgba(17, 72, 135, 0.9);
+}
+/* ==========================================================================
+SEARCH BAR
+======================================================================== */
+#main-search ::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #fff;
+    opacity: 1; /* Firefox */
+}
+#main-search :-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #fff;
+}
+#main-search ::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: #fff;
+}
+#main-search .form-control {
+    color: #fff;
+}
+#main-search .form-control:focus {
+    background: #255396;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+}
+/* ==========================================================================
+DETAIL CARD
+======================================================================== */
+.statut-BET .height-img:after {
+    background: rgba(32, 150, 243, 0.9);
+}
+.statut-gros-oeuvre .height-img:after {
+    background: rgba(0, 150, 136, 0.9);
+}
+.statut-chantier .height-img:after {
+    background: rgba(164, 16, 105, 0.9);
+}
+/* ==========================================================================
+RWD
+======================================================================== */
+@media only screen and (min-width: 992px) {
+    #main-search {
+        background: #255396;
+    }
+}

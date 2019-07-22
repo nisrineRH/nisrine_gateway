@@ -2,37 +2,37 @@
 
 <div>
     <h2 id="page-heading">
-      <!--  <span jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.home.title">Demandes</span> -->
+<!--
+     &lt;!&ndash;  <span jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.home.title">Demandes</span> &ndash;&gt;
+-->
         <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-demande" [routerLink]="['/demande/new']">
             <fa-icon [icon]="'plus'"></fa-icon>
             <span  jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.home.createLabel">
             Create new Demande
             </span>
         </button>
-    </h2>
-    <jhi-alert></jhi-alert>
-    <br/>
-          <!-- 
 
-      contenu de page 
+    </h2>   <!--
 
-    -->              
+      contenu de page
+
+    -->
     <div class="demande py-5 animated animBottom">
             <div class="container">
               <div class="d-flex justify-content-between align-items-center mb-5">
                 <h2><span>{{totalItems}}</span> demandes trouvées</h2>
-                
-                <form class="form-inline d-md-block d-lg-none">  
+
+                <form class="form-inline d-md-block d-lg-none">
                    <a href="/netsuivi/new-demande.php" class="btn btn-custom">+ Demande</a>
-                </form>  
+                </form>
                 <ul class="small nav nav-tabs customTab list-grid-toggle">
                   <li class="nav-item">
                     <a class="active" id="grid">Grille</a>
                   </li>
                   <li class="nav-item">
                     <a id="list">Liste</a>
-                  </li>            
-                </ul>          
+                  </li>
+                </ul>
               </div>
               <div class="row">
                 <div class="variableCol col-md-6 col-lg-4"  *ngFor="let demande of demandes">
@@ -43,9 +43,9 @@
                         <li><h4>pd_ppm_kbcom_0045 : modif ville acquereur</h4></li>
                         <li class="d-flex align-items-center mt-2 mb-4">
                           <i class="fas fa-check-circle"></i>
-                          <span class="small">Développement terminé</span>                   
+                          <span class="small">Développement terminé</span>
                         </li>
-                      </ul>              
+                      </ul>
                       <ul>
                          <li class="small text-muted">Validation recette</li>
                          <li>{{demande.dateValidationRecette}}</li>
@@ -56,7 +56,7 @@
                           <span>Client</span>
                           <span>Open</span>
                         </li>
-                      </ul>                
+                      </ul>
                       <div class="d-flex justify-content-center align-items-center mt-4 mb-4">
                           <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#import-document"><i class="fas fa-arrow-down"></i>doc</button>
                           <button type="button" class="btn btn-sm btn-outline-custom"  [routerLink]="['/demande', demande.id, 'edit']"  jhiTranslate="entity.action.edit"><i class="fas fa-pen"></i>éditer</button>
@@ -64,9 +64,9 @@
                     </div>
                   </div>
                 </div>
-                <!-- 
-                 card  
-               
+                <!--
+                 card
+
                 <div class="variableCol col-md-6 col-lg-4">
                   <div class="card customCard mb-4 shadow-sm recette-client-ok switchClient">
                     <div class="card-body">
@@ -75,9 +75,9 @@
                         <li><h4>pd_ppm_kbcom_0045 : modif ville acquereur</h4></li>
                         <li class="d-flex align-items-center mt-2 mb-4">
                           <i class="fas fa-sync-alt"></i>
-                          <span class="small">Recette Client OK</span>                   
+                          <span class="small">Recette Client OK</span>
                         </li>
-                      </ul>              
+                      </ul>
                       <ul>
                          <li class="small text-muted">Validation recette</li>
                          <li>14 Juil 2020</li>
@@ -88,7 +88,7 @@
                           <span>Client</span>
                           <span>Open</span>
                         </li>
-                      </ul>                
+                      </ul>
                       <div class="d-flex justify-content-center align-items-center mt-4 mb-4">
                           <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#import-document"><i class="fas fa-arrow-down"></i>doc</button>
                           <button type="button" class="btn btn-sm btn-outline-custom" data-toggle="modal" data-target="#choix-partage"><a href="#"><i class="fas fa-pen"></i>éditer</a></button>
@@ -96,10 +96,10 @@
                     </div>
                   </div>
                 </div>
-                 --> 
-                <!-- 
-                 card  
-             
+                 -->
+                <!--
+                 card
+
                 <div class="variableCol col-md-6 col-lg-4">
                   <div class="card customCard mb-4 shadow-sm mise-en-production switchOpen">
                     <div class="card-body">
@@ -108,9 +108,9 @@
                         <li><h4>pd_ppm_kbcom_0045 : modif ville acquereur</h4></li>
                         <li class="d-flex align-items-center mt-2 mb-4">
                           <i class="fas fa-arrow-right"></i>
-                          <span class="small">Mise en production</span>                   
+                          <span class="small">Mise en production</span>
                         </li>
-                      </ul>              
+                      </ul>
                       <ul>
                          <li class="small text-muted">Validation recette</li>
                          <li>14 Juil 2020</li>
@@ -121,7 +121,7 @@
                           <span>Client</span>
                           <span>Open</span>
                         </li>
-                      </ul>                
+                      </ul>
                       <div class="d-flex justify-content-center align-items-center mt-4 mb-4">
                           <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#import-document"><i class="fas fa-arrow-down"></i>doc</button>
                           <button type="button" class="btn btn-sm btn-outline-custom" data-toggle="modal" data-target="#choix-partage"><a href="#"><i class="fas fa-pen"></i>éditer</a></button>
@@ -129,10 +129,10 @@
                     </div>
                   </div>
                 </div>
-                   -->  
-                <!-- 
-                 card  
-                
+                   -->
+                <!--
+                 card
+
                  <div class="variableCol col-md-6 col-lg-4">
                   <div class="card customCard mb-4 shadow-sm detecte switchOpen">
                     <div class="card-body">
@@ -141,9 +141,9 @@
                         <li><h4>pd_ppm_kbcom_0045 : modif ville acquereur</h4></li>
                         <li class="d-flex align-items-center mt-2 mb-4">
                           <i class="fas fa-exclamation-circle"></i>
-                          <span class="small">Détecté</span>                   
+                          <span class="small">Détecté</span>
                         </li>
-                      </ul>              
+                      </ul>
                       <ul>
                          <li class="small text-muted">Validation recette</li>
                          <li>14 Juil 2020</li>
@@ -154,7 +154,7 @@
                           <span>Client</span>
                           <span>Open</span>
                         </li>
-                      </ul>                
+                      </ul>
                       <div class="d-flex justify-content-center align-items-center mt-4 mb-4">
                           <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#import-document"><i class="fas fa-arrow-down"></i>doc</button>
                           <button type="button" class="btn btn-sm btn-outline-custom" data-toggle="modal" data-target="#choix-partage"><a href="#"><i class="fas fa-pen"></i>éditer</a></button>
@@ -162,10 +162,10 @@
                     </div>
                   </div>
                 </div>
-                -->    
-                <!-- 
-                 card  
-                -->                                     
+                -->
+                <!--
+                 card
+                -->
               </div><!-- /row -->
             </div><!-- / container -->
           </div><!-- / album -->
@@ -259,5 +259,5 @@
     </div>
 
 -->
-  
+
 </div>

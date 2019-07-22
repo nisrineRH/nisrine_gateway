@@ -2,52 +2,293 @@
 @import '~bootstrap/scss/variables';
 
 /* ==========================================================================
-Navbar
+Navbar navbar
 ========================================================================== */
-
-.navbar-version {
-    font-size: 0.65em;
-    color: $navbar-dark-color;
-}
-
-.profile-image {
-    height: 1.75em;
-    width: 1.75em;
-}
-
-.navbar {
-    padding: 0.2rem 1rem;
-    .dropdown-item.active,
-    .dropdown-item.active:focus,
-    .dropdown-item.active:hover {
-        background-color: $dark;
-    }
-
-    ul.navbar-nav {
-        .nav-item {
-            margin-left: 0.5em;
-        }
-    }
-
-    a.nav-link {
-        font-weight: 400;
-    }
-
-    .navbar-toggler {
-        &:hover {
-            color: $navbar-dark-hover-color;
-        }
-    }
-}
-
 /* ==========================================================================
-Logo styles
-========================================================================== */
-.logo-img {
-    height: 45px;
-    width: 45px;
+SIDEBAR
+======================================================================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    background-color: #fff;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    width: 84px;
+}
+.navbar .navbar-brand {
+    position: absolute;
+    top: 0;
+    margin: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 80px;
+    background-color: #fff;
+}
+.navbar .navbar-brand img {
+    display: block;
+    margin: 0 auto;
+    height: 60px;
+    width: 60px;
+    padding: 0.6em;
+}
+.navbar .nav {
+    overflow: hidden;
+}
+.navbar a {
+    color: #5f5f5f;
+}
+.navbar .nav a {
+    position: relative;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.navbar .nav a * {
+    position: relative;
+    z-index: 1;
+}
+.navbar .nav a svg {
+    position: relative;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    margin: 0 30px 0 10px;
+}
+#customMenu a {
+    display: block;
+}
+.menu-modal .nav a svg {
+    margin-right: 10px;
+}
+.navbar .nav a:after {
+    display: block;
+    position: absolute;
+    content: '';
+    top: 0;
+    z-index: 0;
+    bottom: 0;
+    left: 2em;
+    margin: auto;
+    border-radius: 50%;
+    background: transparent;
+    height: 0;
+    width: 0;
+    background: #ffc107;
+    transition: all 0.3s ease-in-out;
+    -webkit-box-shadow: 0 0 0 0 #ffc107;
+    box-shadow: 0 0 0 0 #ffc107;
+}
+.navbar .nav a:hover:after {
+    height: 10px;
+    width: 10px;
+    -webkit-box-shadow: 0 0 0 20px #ffc107;
+    box-shadow: 0 0 0 20px #ffc107;
+}
+.customMenu {
+    background: #fff;
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    z-index: 2;
+    opacity: 0;
+    top: 0;
+    left: -100%;
+    flex-direction: column;
+    bottom: 0;
+    transition: 0.3s ease;
+    align-items: center;
+    overflow: hidden;
+}
+.navigation-is-open .customMenu {
+    opacity: 1;
+    left: 0;
+}
+.customMenu .tab-pane {
+    transition: 0.3s ease;
+    opacity: 0;
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+}
+.customMenu .tab-pane.show {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+}
+.customCollapse.active {
+    border-right: 4px solid #ac1167;
+}
+#customMenu a:after {
+    left: 1.5em;
+}
+#customMenu a svg {
+    margin: 0 1em;
+}
+#toggle,
+.toggle {
+    padding: 0;
+    display: block;
+    height: 80px;
+    width: 80px;
+    background: #fff;
+    top: 0;
+    z-index: 101;
+    left: 0px;
+    cursor: pointer;
+    position: fixed;
+    transition: 0.25s ease-out;
+}
+#customMenu .toggle {
+    position: absolute;
+    top: 0;
+    left: auto;
+    right: 1em;
+}
+#toggle:after,
+#toggle:before,
+.toggle:after,
+.toggle:before {
+    position: absolute;
+    content: '';
+    width: 25px;
+    height: 2px;
+    border-radius: 4px;
+    left: 0;
+    right: 0;
+    transition: 0.25s ease-out;
+    margin: auto;
+    background: #ffc107;
+}
+#toggle:before {
+    top: 35px;
+}
+#toggle:after {
+    top: 45px;
+}
+.toggle:before,
+.toggle:after {
+    top: 0;
+    bottom: 0;
+}
+#customMenu .toggle:hover:before {
+    transform: rotate(40deg);
+}
+.is-open #toggle:before,
+.is-open #toggle:after {
+    top: 50%;
+    width: 25px;
+}
+.is-open #toggle:before,
+.toggle:before {
+    transform: rotate(-135deg);
+}
+.is-open #toggle:after,
+.toggle:after {
+    transform: rotate(135deg);
+}
+.navbar-light .navbar-toggler {
+    color: rgba(255, 255, 255, 0.8);
+    border-color: rgba(255, 255, 255, 0);
+}
+.masque:before {
+    position: absolute;
+    z-index: 0;
+    content: '';
+    height: 100%;
+    width: 100%;
+    transition: 0.5s ease-out;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+.logo {
+    height: 70px;
+    width: 70px;
+    background: #e6e6e6;
+    border-radius: 50%;
+    padding: 1em;
+    margin: 1em;
+}
+.separator {
+    height: 1px;
+    width: 100%;
+    margin: 0.5em 0;
+    background: #ececec;
+}
+/*.rwdColumn:before {
+	position: absolute;
+	content:"";
+	left: 0;
+	right: 0;
+	margin: auto;
+	bottom: 1em;
+	height: 40px;
+	width: 40px;
+	padding: .5em;
+	background-color: #e0e0e0;
+    background-size: 70%;
+    border-radius: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+	background-image:url(../images/icons/ppm-logo.svg);
+}*/
+.home .fullBrand {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: 1em;
+}
+.fullBrand {
+    color: #929292;
+}
+.fullBrand .logo {
+    height: 40px;
+    width: 40px;
+    font-size: 0.5em;
+    background-color: #d0d0d0;
+}
+.fullBrand ul {
+    line-height: 1em;
+}
+.user {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1em 0;
+    overflow: hidden;
+    border-top: 1px solid #f1f1f1;
+}
+.user svg,
+.user span.bg-cover,
+.profilUser {
     display: inline-block;
     vertical-align: middle;
-    background: url('../../../content/images/logo-jhipster.png') no-repeat center center;
-    background-size: contain;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    padding: 12px;
+    border-radius: 50%;
+    background-color: #e6e6e6;
+}
+.user svg,
+.user span.bg-cover {
+    margin: 0 17px;
+}
+.user a {
+    min-width: 250px;
+    display: block;
+    padding-top: 5px;
+    color: rgba(0, 0, 0, 0.4);
+    font-size: 0.9em;
+}
+.user a:hover {
+    color: rgba(0, 0, 0, 1);
 }

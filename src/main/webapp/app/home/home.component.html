@@ -80,7 +80,7 @@
         <h2 class="mb-5">Mon espace</h2>
         <div class="row">
             <div class="col-md-6">
-                <a href="/netsuivi/demandes.php" class="card customCard mb-4 shadow-sm">
+                <a class="dropdown-item" routerLink="demande" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
                     <div class="card-body pt-5 pb-5">
                         <ul class="d-flex align-items-center flex-sm-row flex-column">
                             <li class="profilUser requestIcon mr-4">
@@ -102,7 +102,7 @@
              card
            -->
             <div class="col-md-6">
-                <a href="#" class="card customCard mb-4 shadow-sm" data-toggle="modal" data-target="#documentMenu">
+                <a class="dropdown-item" routerLink="client-document" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
                     <div class="card-body pt-5 pb-5">
                         <ul class="d-flex align-items-center flex-sm-row flex-column">
                             <li class="profilUser documentIcon mr-4">

@@ -13,7 +13,8 @@ import { Client_documentService } from './client-document.service';
 
 @Component({
     selector: 'jhi-client-document',
-    templateUrl: './client-document.component.html'
+    templateUrl: './client-document.component.html',
+    styleUrls: ['./client-document.css']
 })
 export class Client_documentComponent implements OnInit, OnDestroy {
     currentAccount: any;

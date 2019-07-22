@@ -1,0 +1,36 @@
+.home footer {
+    display: none;
+}
+footer {
+    font-size: 0.9em;
+    opacity: 0.6;
+}
+footer > ul > li {
+    border-right: 1px solid rgba(0, 0, 0, 0.15);
+    padding: 0 1em;
+}
+footer li:last-child {
+    border: none;
+}
+#topPage {
+    -webkit-transform: translate(-100%);
+    transform: translate(-100%);
+    opacity: 0;
+    transition: 0.25s ease;
+}
+.hide-nav-bar #topPage {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+    opacity: 1;
+}
+#topPage i {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+#cookie-policy-popin {
+    position: fixed;
+    bottom: 1em;
+    right: 1em;
+    margin: 0;
+    z-index: 1100;
+}

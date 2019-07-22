@@ -14,7 +14,8 @@ import { HistouriqueStatutDemandeService } from 'app/entities/DemandeMicroServic
 
 @Component({
     selector: 'jhi-demande-update',
-    templateUrl: './demande-update.component.html'
+    templateUrl: './demande-update.component.html',
+    styleUrls: ['./demande-update.css']
 })
 export class DemandeUpdateComponent implements OnInit {
     demande: IDemande;

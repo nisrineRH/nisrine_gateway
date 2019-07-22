@@ -1,3 +1,195 @@
+<!--
+
+contenu de page
+
+-->
+<!--
+  Appel Biblio plug-in wysiwyg editor
+ -->
+<!--<link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.js"></script> -->
+
+
+<div class="demande py-5 animated animBottom">
+    <div class="container">
+        <ol class="breadcrumb small d-md-flex d-lg-none">
+            <li class="breadcrumb-item"><a href="/netsuivi/dashboard">Accueil</a></li>
+            <li class="breadcrumb-item"><a href="/netsuivi/demandes">Demandes</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Nouvelle Demande</li>
+        </ol>
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-demande-heading" jhiTranslate="nisrineGatewayApp.demandeMicroServiceDemande.home.createOrEditLabel">Create or edit a Demande</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+        <div class="card mb-4 shadow-sm">
+            <div class="card-header d-flex flexBetweenColumn pt-5 pb-5">
+                <div>
+                    <div class="mb-4">
+                        <label for="" class="text-custom">Demande</label>
+                        <input type="text" class="form-control" placeholder="Nouvelle Demande" value="" required="">
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="" class="text-custom">Numéro</label>
+                            <input type="text" class="form-control" placeholder="-" value="" required="">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="" class="text-custom">Client</label>
+                            <input type="text" class="form-control" placeholder="Client-TEST" value="" required="">
+                        </div>
+                    </div>
+                </div>
+                <ul>
+                    <li class="d-flex align-items-center mb-2 mt-4">
+                        <i class="fas fa-circle text-primary"></i>
+                        <ul class="ml-2">
+                            <li>Créé le</li>
+                            <li>par -</li>
+                        </ul>
+                    </li>
+                    <li class="d-flex align-items-center mb-2 mt-4">
+                        <i class="fas fa-circle text-info"></i>
+                        <ul class="ml-2">
+                            <li>Modifié le</li>
+                            <li>par -</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <button type="button" class="btn btn-sm btn-outline-primary" data-toggle="modal" data-target="#RespondersList"><i class="fas fa-history"></i> historique</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body pt-5 pb-5">
+                <div class="row">
+                    <div class="col-lg-5">
+                        <h3 class="mb-4">Titre à définir</h3>
+                        <label for="" class="text-custom">Type de demande</label>
+                        <select class="custom-select d-block w-100 mb-3" id="country" required="">
+                            <option value="">Evolution avec BC</option>
+                            <option>Evolution dans CS</option>
+                            <option>Hotline</option>
+                        </select>
+                        <label for="" class="text-custom">Priorité</label>
+                        <select class="custom-select d-block w-100 mb-3" id="country" required="">
+                            <option value="">Basse</option>
+                            <option>Moyenne</option>
+                            <option>Haute</option>
+                        </select>
+                        <label for="" class="text-custom">Statut</label>
+                        <select class="custom-select d-block w-100 mb-4" id="country" required="">
+                            <option value="">Détecté</option>
+                            <option>Etude CDC client en cours</option>
+                            <option>Accord client SFD</option>
+                        </select>
+                        <label for="" class="text-custom">Clotûre de la DM</label>
+                        <div class="d-flex align-items-center mb-4 stopPropa">
+                            <div class="mr-2">
+                                <span class="mr-3">Cloturée</span>
+                                <button type="button" class="btn btn-xs btn-toggle mr-3 active" data-toggle="button" aria-pressed="true" autocomplete="off">
+                                    <div class="handle"></div>
+                                </button>
+                                <span>En cours</span>
+                            </div>
+                        </div>
+                        <label for="" class="text-custom">Intervention</label>
+                        <div class="d-flex align-items-center mb-4 stopPropa">
+                            <div class="mr-2">
+                                <span class="mr-3">Client</span>
+                                <button type="button" class="btn btn-xs btn-toggle mr-3 active" data-toggle="button" aria-pressed="true" autocomplete="off">
+                                    <div class="handle"></div>
+                                </button>
+                                <span>Open</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="offset-lg-1 col-lg-6">
+                        <h3 class="mb-4">Avancement</h3>
+                        <label for="" class="text-custom">Date souhaitée</label>
+                        <div class="input-group date mb-3">
+                            <input type="text" class="form-control"  placeholder="-">
+                            <span class="text-custom">
+							<i class="far fa-calendar"></i>
+						</span>
+                        </div>
+                        <label for="" class="text-custom">Accord Devis</label>
+                        <div class="input-group date mb-3">
+                            <input type="text" class="form-control"  placeholder="-">
+                            <span class="text-custom">
+							<i class="far fa-calendar"></i>
+						</span>
+                        </div>
+                        <label for="" class="text-custom">Livraison prévue</label>
+                        <div class="input-group date mb-3">
+                            <input type="text" class="form-control"  placeholder="-">
+                            <span class="text-custom">
+							<i class="far fa-calendar"></i>
+						</span>
+                        </div>
+                        <label for="" class="text-custom">Mise en recette</label>
+                        <div class="input-group date mb-3">
+                            <input type="text" class="form-control"  placeholder="-">
+                            <span class="text-custom">
+							<i class="far fa-calendar"></i>
+						</span>
+                        </div>
+                        <label for="" class="text-custom">Validation recette</label>
+                        <div class="input-group date mb-3">
+                            <input type="text" class="form-control"  placeholder="-">
+                            <span class="text-custom">
+							<i class="far fa-calendar"></i>
+						</span>
+                        </div>
+                        <label for="" class="text-custom">Mise en production</label>
+                        <div class="input-group date mb-3">
+                            <input type="text" class="form-control"  placeholder="-">
+                            <span class="text-custom">
+							<i class="far fa-calendar"></i>
+						</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4 mb-4">
+                    <h3 class="mb-3">Commentaire</h3>
+                    <div id="summernote"></div>
+                    <script>
+			      $('#summernote').summernote({
+			        placeholder: 'Hello bootstrap 4',
+			        tabsize: 2,
+			        dialogsInBody: true,
+			        height: 300
+			      });
+			    </script>
+                </div>
+            </div>
+        </div><!-- / card -->
+        <!--<div class="d-flex justify-content-center align-items-center mt-4 mb-4">
+            <button type="button" class="btn btn-outline-secondary my-2 mr-2">Annuler</button>
+           <button type="button" class="btn btn-custom">Enregistrer</button>
+            <button type="button" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Enregistrer</span>
+        </div>-->
+        <div>
+            <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Annuler</span>
+            </button>
+            <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Enregistrer</span>
+            </button>
+        </div>
+
+
+         </div><!-- / container -->
+</div><!-- / album -->
+
+
+
+
+
+<!--
+
 <div class="row justify-content-center">
     <div class="col-8">
         <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
@@ -136,3 +328,4 @@
         </form>
     </div>
 </div>
+-->
