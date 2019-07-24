@@ -3,11 +3,13 @@ import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { JhiEventManager } from 'ng-jhipster';
 
 import { LoginModalService, AccountService, Account } from 'app/core';
+import { noop } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'jhi-home',
     templateUrl: './home.component.html',
-    styleUrls: ['home.css']
+    styleUrls: ['home.scss']
 })
 export class HomeComponent implements OnInit {
     account: Account;

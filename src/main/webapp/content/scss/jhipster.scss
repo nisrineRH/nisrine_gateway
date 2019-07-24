@@ -1,6 +1,7 @@
 @import 'bootstrap-variables';
-@import 'style';
-@import 'style-custom';
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+
 /* ==============================================================
 Bootstrap tweaks
 ===============================================================*/
@@ -23,6 +24,10 @@ a:hover {
     font-weight: bold;
     /* make sure browsers use the pointer cursor for anchors, even with no href */
     cursor: pointer;
+}
+
+.dropdown-item:hover {
+    color: $dropdown-link-hover-color;
 }
 
 /* ==========================================================================
@@ -111,7 +116,7 @@ Custom alerts for notification
             font-size: 10px;
         }
     }
-    .toast {
+    .jhi-toast {
         position: fixed;
         width: 100%;
         &.left {
@@ -130,49 +135,9 @@ Custom alerts for notification
 }
 
 @media screen and (min-width: 480px) {
-    .alerts .toast {
+    .alerts .jhi-toast {
         width: 50%;
     }
-}
-
-/* ==========================================================================
-entity tables helpers
-========================================================================== */
-
-/* Remove Bootstrap padding from the element
-http://stackoverflow.com/questions/19562903/remove-padding-from-columns-in-bootstrap-3 */
-@mixin no-padding($side) {
-    @if $side == 'all' {
-        .no-padding {
-            padding: 0 !important;
-        }
-    } @else {
-        .no-padding-#{$side} {
-            padding-#{$side}: 0 !important;
-        }
-    }
-}
-@include no-padding('left');
-@include no-padding('right');
-@include no-padding('top');
-@include no-padding('bottom');
-@include no-padding('all');
-
-/* bootstrap 3 input-group 100% width
-http://stackoverflow.com/questions/23436430/bootstrap-3-input-group-100-width */
-.width-min {
-    width: 1% !important;
-}
-
-/* Makes toolbar not wrap on smaller screens
-http://www.sketchingwithcss.com/samplechapter/cheatsheet.html#right */
-.flex-btn-group-container {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: row;
-    flex-direction: row;
-    -webkit-justify-content: flex-end;
-    justify-content: flex-end;
 }
 
 /* ==========================================================================
@@ -205,16 +170,6 @@ ui bootstrap tweaks
 .carousel,
 .panel-title a {
     cursor: pointer;
-}
-
-.datetime-picker-dropdown > li.date-picker-menu div > table .btn-default,
-.uib-datepicker-popup > li > div.uib-datepicker > table .btn-default {
-    border: 0;
-}
-
-.datetime-picker-dropdown > li.date-picker-menu div > table:focus,
-.uib-datepicker-popup > li > div.uib-datepicker > table:focus {
-    outline: none;
 }
 
 .thread-dump-modal-lock {
