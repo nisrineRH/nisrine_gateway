@@ -29,12 +29,20 @@ contenu de page
                 <div>
                     <div class="mb-4">
                         <label for="" class="text-custom">Demande</label>
-                        <input type="text" class="form-control" placeholder="Nouvelle Demande" value="" required="">
+                        <input type="text" class="form-control" 
+                        placeholder="Nouvelle Demande" value="" 
+                        required=""
+                        name="dm_libelle" id="field_dm_libelle"
+                        [(ngModel)]="demande.dm_libelle"
+                        >
                     </div>
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <label for="" class="text-custom">Numéro</label>
-                            <input type="text" class="form-control" placeholder="-" value="" required="">
+                            <input type="text" class="form-control" placeholder="-" value="" required=""
+                            name="dm_numero" id="field_dm_numero"
+                            [(ngModel)]="demande.dm_numero"
+                            >
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="" class="text-custom">Client</label>
@@ -67,22 +75,31 @@ contenu de page
                     <div class="col-lg-5">
                         <h3 class="mb-4">Titre à définir</h3>
                         <label for="" class="text-custom">Type de demande</label>
-                        <select class="custom-select d-block w-100 mb-3" id="country" required="">
-                            <option value="">Evolution avec BC</option>
-                            <option>Evolution dans CS</option>
-                            <option>Hotline</option>
+                        <select class="custom-select d-block w-100 mb-3"
+                        name="dm_type"
+                        [(ngModel)]="demande.dm_type"
+                         id="country" required="">
+                            <option value="Evolution avec BC">Evolution avec BC</option>
+                            <option value="Evolution dans CS">Evolution dans CS</option>
+                            <option value="Hotline">Hotline</option>
                         </select>
                         <label for="" class="text-custom">Priorité</label>
-                        <select class="custom-select d-block w-100 mb-3" id="country" required="">
-                            <option value="">Basse</option>
-                            <option>Moyenne</option>
-                            <option>Haute</option>
+                        <select class="custom-select d-block w-100 mb-3" id="country" required=""
+                        name="dm_priorite" id="field_dm_priorite"
+                        [(ngModel)]="demande.dm_priorite"
+                        >
+                            <option value="Basse">Basse</option>
+                            <option value="Moyenne">Moyenne</option>
+                            <option value="Haute">Haute</option>
                         </select>
                         <label for="" class="text-custom">Statut</label>
-                        <select class="custom-select d-block w-100 mb-4" id="country" required="">
-                            <option value="">Détecté</option>
-                            <option>Etude CDC client en cours</option>
-                            <option>Accord client SFD</option>
+                        <select class="custom-select d-block w-100 mb-4" id="country" required=""
+                        name="dm_statut" 
+                        [(ngModel)]="demande.dm_statut"
+                        >
+                            <option value="Détecté">Détecté</option>
+                            <option value="Etude CDC client en cours">Etude CDC client en cours</option>
+                            <option value="Accord client SFD">Accord client SFD</option>
                         </select>
                         <label for="" class="text-custom">Clotûre de la DM</label>
                         <div class="d-flex align-items-center mb-4 stopPropa">
@@ -98,7 +115,13 @@ contenu de page
                         <div class="d-flex align-items-center mb-4 stopPropa">
                             <div class="mr-2">
                                 <span class="mr-3">Client</span>
-                                <button type="button" class="btn btn-xs btn-toggle mr-3 active" data-toggle="button" aria-pressed="true" autocomplete="off">
+                                <button type="button" class="btn btn-xs btn-toggle mr-3 active" 
+                                        data-toggle="button" 
+                                        aria-pressed="true" 
+                                        autocomplete="off"
+                                        name="intervenant" id="field_intervenant"
+                                         [(ngModel)]="demande.intervenant"
+                        >
                                     <div class="handle"></div>
                                 </button>
                                 <span>Open</span>
@@ -109,45 +132,73 @@ contenu de page
                         <h3 class="mb-4">Avancement</h3>
                         <label for="" class="text-custom">Date souhaitée</label>
                         <div class="input-group date mb-3">
-                            <input type="text" class="form-control"  placeholder="-">
-                            <span class="text-custom">
-							<i class="far fa-calendar"></i>
-						</span>
+                            <input type="text" class="form-control"  placeholder="-"
+                            name="dateLivraisonSouhaitee" ngbDatepicker  #dateLivraisonSouhaiteeDp="ngbDatepicker" [(ngModel)]="demande.dateLivraisonSouhaitee"
+                            >
+                            <span class="input-group-append">
+                                    <button type="button" class="btn btn-secondary" (click)="dateLivraisonSouhaiteeDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                                </span>
+                         
                         </div>
                         <label for="" class="text-custom">Accord Devis</label>
                         <div class="input-group date mb-3">
-                            <input type="text" class="form-control"  placeholder="-">
-                            <span class="text-custom">
-							<i class="far fa-calendar"></i>
-						</span>
+                            <input type="text" class="form-control" 
+                             placeholder=""
+                            name="dateAccordDevis" 
+                            ngbDatepicker 
+                             #dateAccordDevisDp="ngbDatepicker" 
+                             [(ngModel)]="demande.dateAccordDevis"
+                            >
+                            <span class="input-group-append">
+                                    <button type="button" class="btn btn-secondary" (click)="dateAccordDevisDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                                </span>
                         </div>
                         <label for="" class="text-custom">Livraison prévue</label>
                         <div class="input-group date mb-3">
-                            <input type="text" class="form-control"  placeholder="-">
-                            <span class="text-custom">
-							<i class="far fa-calendar"></i>
-						</span>
+                            <input type="text" class="form-control" 
+                             placeholder=""
+                             name="dateLivraisonPrevue" ngbDatepicker  
+                             #dateLivraisonPrevueDp="ngbDatepicker" 
+                             [(ngModel)]="demande.dateLivraisonPrevue">
+                             <span class="input-group-append">
+                                    <button type="button" class="btn btn-secondary" (click)="dateLivraisonPrevueDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                                </span>
                         </div>
                         <label for="" class="text-custom">Mise en recette</label>
                         <div class="input-group date mb-3">
-                            <input type="text" class="form-control"  placeholder="-">
-                            <span class="text-custom">
-							<i class="far fa-calendar"></i>
-						</span>
+                            <input type="text" class="form-control"  placeholder=""
+                            name="dateMiseEnRecette" ngbDatepicker  
+                             #dateMiseEnRecetteDp="ngbDatepicker" 
+                             [(ngModel)]="demande.dateMiseEnRecette"
+                             >
+                            <span class="input-group-append">
+                                    <button type="button" class="btn btn-secondary" (click)="dateMiseEnRecetteDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                                </span>
                         </div>
                         <label for="" class="text-custom">Validation recette</label>
                         <div class="input-group date mb-3">
-                            <input type="text" class="form-control"  placeholder="-">
-                            <span class="text-custom">
-							<i class="far fa-calendar"></i>
-						</span>
+                            <input type="text" class="form-control" 
+                             placeholder=""
+                             name="dateValidationRecette" ngbDatepicker 
+                              #dateValidationRecetteDp="ngbDatepicker" 
+                             [(ngModel)]="demande.dateValidationRecette"
+                             >
+                             <span class="input-group-append">
+                                    <button type="button" class="btn btn-secondary" (click)="dateValidationRecetteDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                                </span>
+                           
                         </div>
                         <label for="" class="text-custom">Mise en production</label>
                         <div class="input-group date mb-3">
-                            <input type="text" class="form-control"  placeholder="-">
-                            <span class="text-custom">
-							<i class="far fa-calendar"></i>
-						</span>
+                            <input type="text" class="form-control" 
+                             placeholder=""
+                             name="dateMiseEnProduction" ngbDatepicker 
+                              #dateMiseEnProductionDp="ngbDatepicker"
+                              [(ngModel)]="demande.dateMiseEnProduction"
+                             >
+                             <span class="input-group-append">
+                                    <button type="button" class="btn btn-secondary" (click)="dateMiseEnProductionDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                                </span>
                         </div>
                     </div>
                 </div>
