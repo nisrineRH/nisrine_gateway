@@ -47,11 +47,11 @@
                   <div class="card customCard mb-4 shadow-sm developpement-termine switchOpen">
                     <div class="card-body">
                       <ul class="quote mt-3">
-                        <li class="small text-muted">201902016</li>
-                        <li><h4>{{demande.dm_libelle}} : modif ville acquereur</h4></li>
+                        <li class="small text-muted">{{demande.dm_numero}}</li>
+                        <li><h4>{{demande.dm_libelle}} </h4></li>
                         <li class="d-flex align-items-center mt-2 mb-4">
                           <i class="fas fa-check-circle"></i>
-                          <span class="small">Développement terminé</span>
+                          <span class="small">{{demande.dm_statut}}</span>
                         </li>
                       </ul>
                       <ul>
@@ -59,7 +59,7 @@
                          <li>{{demande.dateValidationRecette}}</li>
                       </ul>
                       <ul class="mt-3 switch">
-                         <li class="small text-muted">Intervenant {{demande.intervenant}}</li>
+                         <li class="small text-muted">Intervenant</li>
                          <li class="d-flex align-items-center">
                           <span>Client</span>
                           <span>Open</span>
