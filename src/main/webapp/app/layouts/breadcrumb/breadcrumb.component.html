@@ -1,0 +1,366 @@
+
+<nav class="flex-row-reverse navbar fixed-top navbar-expand-lg" id="main-search">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="1"></circle><circle cx="12" cy="5" r="1"></circle><circle cx="12" cy="19" r="1"></circle></svg>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+        <!--
+         ----------------------------------------------------------------
+       $$$$$$nom page$$$$$ = PAGE EN COURS
+
+       Demandes,
+       Documents,
+       Mon Profil,
+       Condition Utilisation
+
+     -->
+        <ol class="breadcrumb small d-none d-lg-flex">
+            <li class="breadcrumb-item"><a href="/netsuivi/dashboard">Accueil</a></li>
+            <li class="breadcrumb-item active" aria-current="page">
+                $$$$$$nom page$$$$$
+            </li>
+        </ol><!--   / collapse -->
+
+        <!--
+         ----------------------------------------------------------------
+      2e NIV ARBO
+
+       New Demande
+       Edit Demande
+
+     -->
+        <ol class="breadcrumb small d-none d-lg-flex">
+            <li class="breadcrumb-item"><a href="/netsuivi/dashboard">Accueil</a></li>
+            <li class="breadcrumb-item"><a href="/netsuivi/demandes">Demandes</a></li>
+            <li class="breadcrumb-item active" aria-current="page">
+                $$$$$$nom page$$$$$
+            </li>
+        </ol>
+        <!--
+         ----------------------------------------------------------------
+
+       Demandes
+
+     -->
+        <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item">
+                <form class="form-inline d-none d-lg-block mr-3">
+                    <a href="/netsuivi/new-demande.php" class="btn btn-custom">+ Demande</a>
+                </form>
+            </li>
+            <li class="nav-item">
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Je recherche" aria-label="Search">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </form>
+            </li>
+            <li class="nav-item dropdown megamenu-li">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Filtres
+                </a>
+                <div class="dropdown-menu dropdown-menu-right megamenu shadow-lg" aria-labelledby="navbarDropdown">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <label for="" class="text-custom">Statut de la Demande</label>
+                            <ul class="scrollableTab tabNoLink small stopPropa mb-4">
+                                <li>
+                                    <span>Detecté</span>
+                                    <button type="button" class="btn btn-xs btn-toggle active" data-toggle="button" aria-pressed="true" autocomplete="off">
+                                        <div class="handle"></div>
+                                    </button>
+                                </li>
+                                <li>
+                                    <span>Etude CDC Client en cours</span>
+                                    <button type="button" class="btn btn-xs btn-toggle active" data-toggle="button" aria-pressed="true" autocomplete="off">
+                                        <div class="handle"></div>
+                                    </button>
+                                </li>
+                                <li>
+                                    <span>Etude Open en cours</span>
+                                    <button type="button" class="btn btn-xs btn-toggle active" data-toggle="button" aria-pressed="true" autocomplete="off">
+                                        <div class="handle"></div>
+                                    </button>
+                                </li>                                                             <li>
+                                <span>Attente validation DP SFD</span>
+                                <button type="button" class="btn btn-xs btn-toggle active" data-toggle="button" aria-pressed="true" autocomplete="off">
+                                    <div class="handle"></div>
+                                </button>
+                            </li>
+                                <li>
+                                    <span>Attente accord Client SFD</span>
+                                    <button type="button" class="btn btn-xs btn-toggle active" data-toggle="button" aria-pressed="true" autocomplete="off">
+                                        <div class="handle"></div>
+                                    </button>
+                                </li>
+                                <li>
+                                    <span>Accord client SFD</span>
+                                    <button type="button" class="btn btn-xs btn-toggle active" data-toggle="button" aria-pressed="true" autocomplete="off">
+                                        <div class="handle"></div>
+                                    </button>
+                                </li>
+                                <li>
+                                    <span>Attente accord client devis</span>
+                                    <button type="button" class="btn btn-xs btn-toggle active" data-toggle="button" aria-pressed="true" autocomplete="off">
+                                        <div class="handle"></div>
+                                    </button>
+                                </li>
+                            </ul>
+                            <label for="" class="text-custom">Intervention attendue</label>
+                            <div class="d-flex align-items-center mb-4 stopPropa">
+                                <div class="mr-2">
+                                    <span class="mr-3">Client</span>
+                                    <button type="button" class="btn btn-xs btn-toggle mr-3 active" data-toggle="button" aria-pressed="true" autocomplete="off">
+                                        <div class="handle"></div>
+                                    </button>
+                                    <span>Open</span>
+                                </div>
+                            </div>
+                            <label for="" class="text-custom">Sélectionner Client</label>
+                            <select class="custom-select d-block w-100 stopPropa mb-4" id="country" required="">
+                                <option value="">Client 0</option>
+                                <option>client 1</option>
+                                <option>client 2</option>
+                            </select>
+                            <label for="" class="text-custom">Type de Demande</label>
+                            <div class="d-flex align-items-center mb-4 stopPropa">
+                                <div class="mr-2">
+                                    <span class="mr-3">Cloturée</span>
+                                    <button type="button" class="btn btn-xs btn-toggle mr-3 active" data-toggle="button" aria-pressed="true" autocomplete="off">
+                                        <div class="handle"></div>
+                                    </button>
+                                    <span>En cours</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <label for="" class="text-custom">Priorité</label>
+                            <ul class="tabNoLink small stopPropa mb-4">
+                                <li>
+                                    <span>Haute</span>
+                                    <button type="button" class="btn btn-xs btn-toggle active" data-toggle="button" aria-pressed="true" autocomplete="off">
+                                        <div class="handle"></div>
+                                    </button>
+                                </li>
+                                <li>
+                                    <span>Moyenne</span>
+                                    <button type="button" class="btn btn-xs btn-toggle active" data-toggle="button" aria-pressed="true" autocomplete="off">
+                                        <div class="handle"></div>
+                                    </button>
+                                </li>
+                                <li>
+                                    <span>Basse</span>
+                                    <button type="button" class="btn btn-xs btn-toggle active" data-toggle="button" aria-pressed="true" autocomplete="off">
+                                        <div class="handle"></div>
+                                    </button>
+                                </li>
+                            </ul>
+                            <label for="" class="text-custom">Type de demande</label>
+                            <ul class="scrollableTab tabNoLink small stopPropa mb-4">
+                                <li>
+                                    <span>Evolution avec BC</span>
+                                    <button type="button" class="btn btn-xs btn-toggle active" data-toggle="button" aria-pressed="true" autocomplete="off">
+                                        <div class="handle"></div>
+                                    </button>
+                                </li>
+                                <li>
+                                    <span>Evolution dans CS</span>
+                                    <button type="button" class="btn btn-xs btn-toggle active" data-toggle="button" aria-pressed="true" autocomplete="off">
+                                        <div class="handle"></div>
+                                    </button>
+                                </li>
+                                <li>
+                                    <span>Hotline</span>
+                                    <button type="button" class="btn btn-xs btn-toggle active" data-toggle="button" aria-pressed="true" autocomplete="off">
+                                        <div class="handle"></div>
+                                    </button>
+                                </li>
+                                <li>
+                                    <span>Hotline N2</span>
+                                    <button type="button" class="btn btn-xs btn-toggle active" data-toggle="button" aria-pressed="true" autocomplete="off">
+                                        <div class="handle"></div>
+                                    </button>
+                                </li>
+                                <li>
+                                    <span>Hotline N3</span>
+                                    <button type="button" class="btn btn-xs btn-toggle active" data-toggle="button" aria-pressed="true" autocomplete="off">
+                                        <div class="handle"></div>
+                                    </button>
+                                </li>
+                                <li>
+                                    <span>Modification</span>
+                                    <button type="button" class="btn btn-xs btn-toggle active" data-toggle="button" aria-pressed="true" autocomplete="off">
+                                        <div class="handle"></div>
+                                    </button>
+                                </li>                                                             <li>
+                                <span>Paramètrage</span>
+                                <button type="button" class="btn btn-xs btn-toggle active" data-toggle="button" aria-pressed="true" autocomplete="off">
+                                    <div class="handle"></div>
+                                </button>
+                            </li>
+                                <li>
+                                    <span>Reprise de données</span>
+                                    <button type="button" class="btn btn-xs btn-toggle active" data-toggle="button" aria-pressed="true" autocomplete="off">
+                                        <div class="handle"></div>
+                                    </button>
+                                </li>
+                                <li>
+                                    <span>Retour de recette</span>
+                                    <button type="button" class="btn btn-xs btn-toggle active" data-toggle="button" aria-pressed="true" autocomplete="off">
+                                        <div class="handle"></div>
+                                    </button>
+                                </li>
+                                <li>
+                                    <span>Utilisation (que en phase install)</span>
+                                    <button type="button" class="btn btn-xs btn-toggle active" data-toggle="button" aria-pressed="true" autocomplete="off">
+                                        <div class="handle"></div>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul><!--   / nav -->
+        <!--
+         ----------------------------------------------------------------
+
+       Documents
+
+     -->
+        <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item">
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Je recherche" aria-label="Search">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </form>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Filtres
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+
+                    <div class="simpleTab tabLink stopPropa">
+                        <label for="" class="text-custom">Sélectionner Client</label>
+                        <select class="custom-select d-block w-100 stopPropa mb-4" id="country" required="">
+                            <option value="">Client 0</option>
+                            <option>client 1</option>
+                            <option>client 2</option>
+                        </select>
+                        <label for="" class="text-custom">Documents communs</label>
+                        <div class="d-flex align-items-center mb-4 stopPropa">
+                            <div class="mr-2">
+                                <span class="mr-3">Afficher</span>
+                                <button type="button" class="btn btn-xs btn-toggle mr-3 active" data-toggle="button" aria-pressed="true" autocomplete="off">
+                                    <div class="handle"></div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </li>
+        </ul><!--   / nav -->
+        <!--
+         ----------------------------------------------------------------
+
+       Statistiques
+
+     -->
+        <ul class="small nav nav-tabs customTab">
+            <li class="nav-item">
+                <a href="#" class="active">Support</a>
+            </li>
+            <li class="nav-item">
+                <a href="#">Activités</a>
+            </li>
+        </ul> <!-- / nav nav-tabs -->
+        <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item">
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Je recherche" aria-label="Search">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </form>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Filtres
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    <div class="simpleTab tabLink stopPropa">
+                        <label for="" class="text-custom">Par période</label>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <select class="custom-select d-block w-100 stopPropa mb-4" id="country" required="">
+                                    <option value="">Mois</option>
+                                    <option>Janvier</option>
+                                    <option>Février</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <select class="custom-select d-block w-100 stopPropa mb-4" id="country" required="">
+                                    <option value="">Année</option>
+                                    <option>2020</option>
+                                    <option>2021</option>
+                                </select>
+                            </div>
+                        </div><!--    /row   -->
+                        <label for="" class="text-custom">Typologie</label>
+                        <ul class="tabNoLink small stopPropa mb-4">
+                            <li>
+                                <span>En cours</span>
+                                <button type="button" class="btn btn-xs btn-toggle active" data-toggle="button" aria-pressed="true" autocomplete="off">
+                                    <div class="handle"></div>
+                                </button>
+                            </li>
+                            <li>
+                                <span>Attente retour client</span>
+                                <button type="button" class="btn btn-xs btn-toggle active" data-toggle="button" aria-pressed="true" autocomplete="off">
+                                    <div class="handle"></div>
+                                </button>
+                            </li>
+                            <li>
+                                <span>Livré recette</span>
+                                <button type="button" class="btn btn-xs btn-toggle active" data-toggle="button" aria-pressed="true" autocomplete="off">
+                                    <div class="handle"></div>
+                                </button>
+                            </li>
+                            <li>
+                                <span>Fermé sur le mois écoulé</span>
+                                <button type="button" class="btn btn-xs btn-toggle active" data-toggle="button" aria-pressed="true" autocomplete="off">
+                                    <div class="handle"></div>
+                                </button>
+                            </li>
+                        </ul> <!-- /tabNoLink -->
+                    </div> <!-- /simpleTab -->
+                </div> <!-- /dropdown-menu -->
+            </li>  <!-- / nav-item -->
+        </ul> <!-- / nav-item -->
+
+    </div><!--   / navbarResponsive -->
+</nav><!--   / main-search -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

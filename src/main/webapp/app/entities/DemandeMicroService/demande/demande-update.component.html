@@ -39,14 +39,14 @@ contenu de page
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <label for="" class="text-custom">Numéro</label>
-                            <input type="text" class="form-control" placeholder="-" value="" required=""
-                            name="dm_numero" id="field_dm_numero"
+                            <input type="text" class="form-control" name="dm_numero" id="field_dm_numero"
                             [(ngModel)]="demande.dm_numero"
                             >
+
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="" class="text-custom">Client</label>
-                            <input type="text" class="form-control" placeholder="Client-TEST" value="" required="">
+                            <input type="text" class="form-control" placeholder="Exim(05)" value="" required="">
                         </div>
                     </div>
                 </div>
@@ -93,8 +93,8 @@ contenu de page
                         [(ngModel)]="demande.dm_priorite"
                         >
                             <option value="Basse">Basse</option>
-                            <option value="Moyenne">Moyenne</option>
-                            <option value="Haute">Haute</option>
+                            <option>Moyenne</option>
+                            <option>Haute</option>
                         </select>
                         <label for="" class="text-custom">Statut</label>
                         <select class="custom-select d-block w-100 mb-4" id="country" required=""
