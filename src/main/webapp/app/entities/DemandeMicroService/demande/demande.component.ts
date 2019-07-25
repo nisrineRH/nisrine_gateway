@@ -123,6 +123,7 @@ export class DemandeComponent implements OnInit, OnDestroy {
     protected paginateDemandes(data: IDemande[], headers: HttpHeaders) {
         this.links = this.parseLinks.parse(headers.get('link'));
         this.totalItems = parseInt(headers.get('X-Total-Count'), 10);
+        this.demandeService.totalDemandes.next(this.totalItems);
         this.demandes = data;
     }
 

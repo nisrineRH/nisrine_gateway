@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpResponse } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 import * as moment from 'moment';
 import { DATE_FORMAT } from 'app/shared/constants/input.constants';
 import { map } from 'rxjs/operators';
@@ -15,6 +15,9 @@ type EntityArrayResponseType = HttpResponse<IDemande[]>;
 @Injectable({ providedIn: 'root' })
 export class DemandeService {
     public resourceUrl = SERVER_API_URL + 'demandemicroservice/api/demandes';
+
+    //initialiser à 0
+    totalDemandes = new BehaviorSubject<any>(0);
 
     constructor(protected http: HttpClient) {}
 

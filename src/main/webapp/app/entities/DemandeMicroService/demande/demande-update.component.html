@@ -202,17 +202,14 @@ contenu de page
                         </div>
                     </div>
                 </div>
-                <div class="mt-4 mb-4">
+                <div class=" form-group mt-4 mb-4">
                     <h3 class="mb-3">Commentaire</h3>
                     <div id="summernote"></div>
-                    <script>
-			      $('#summernote').summernote({
-			        placeholder: 'Hello bootstrap 4',
-			        tabsize: 2,
-			        dialogsInBody: true,
-			        height: 300
-			      });
-			    </script>
+                    <textarea class="form-control" name="description" id="field_description"
+                    [(ngModel)]="demande.description">
+
+                    </textarea>
+                 
                 </div>
             </div>
         </div><!-- / card -->

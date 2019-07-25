@@ -5,6 +5,7 @@ import { JhiEventManager } from 'ng-jhipster';
 import { LoginModalService, AccountService, Account } from 'app/core';
 import { noop } from 'rxjs';
 import { Router } from '@angular/router';
+import { DemandeService } from 'app/entities/DemandeMicroService/demande';
 
 @Component({
     selector: 'jhi-home',
@@ -15,10 +16,12 @@ export class HomeComponent implements OnInit {
     account: Account;
     modalRef: NgbModalRef;
 
+    private totaleDemandes: number;
     constructor(
         private accountService: AccountService,
         private loginModalService: LoginModalService,
-        private eventManager: JhiEventManager
+        private eventManager: JhiEventManager,
+        protected demandeService: DemandeService
     ) {}
 
     ngOnInit() {
@@ -26,6 +29,9 @@ export class HomeComponent implements OnInit {
             this.account = account;
         });
         this.registerAuthenticationSuccess();
+        this.demandeService.totalDemandes.subscribe(res => {
+            this.totaleDemandes = res;
+        });
     }
 
     registerAuthenticationSuccess() {
